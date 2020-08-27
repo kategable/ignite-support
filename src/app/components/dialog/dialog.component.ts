@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxDialogComponent } from 'igniteui-angular';
+import { IgxDialogComponent } from '@infragistics/igniteui-angular';
 
 @Component({
   selector: 'app-dialog',

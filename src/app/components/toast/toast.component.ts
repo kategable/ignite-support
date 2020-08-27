@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { ToastService } from 'src/app/common/services/toaster.service';
-import { IgxToastComponent } from 'igniteui-angular';
+import { IgxToastComponent } from '@infragistics/igniteui-angular';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
