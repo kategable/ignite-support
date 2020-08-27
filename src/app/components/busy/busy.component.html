@@ -1,0 +1,7 @@
+<p>busy works!</p>
+<div *ngIf="(busyState$ | async)?.isBusy">
+    <div>{{(busyState$ | async)?.message}}</div>
+    <div class="loading-mask active">
+
+    </div>
+</div>

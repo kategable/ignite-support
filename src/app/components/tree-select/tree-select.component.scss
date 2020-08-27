@@ -1,0 +1,41 @@
+﻿@import '../../../pg.component-variables.scss';
+
+#tree-input {
+    font-family: $aon-font-family;
+    font-size: $aon-font-size;
+    color: $text-color;
+    font-weight: normal;
+    cursor: pointer;    
+  }
+.header-cell{
+    cursor: pointer;    
+    top: -3px;
+    position: relative;
+    display: inline-block;
+}
+  .dropdown-icon {
+    color: $highlight-color;
+    margin-right: -4px;
+} 
+.group-name
+{
+    //color: $blue-on-white-color;
+}
+.igx-checkbox{
+    padding-left: 8px;
+    padding-top:8px;
+}
+.igx-grid__thead-wrapper{
+.igx-grid__tr{
+.igx-grid__cbx-selection{
+  border:none;
+}
+}
+}
+
+.igx-grid__tree-grouping-indicator
+{
+    color:#0296DE;
+    font-weight: 400;
+}
+

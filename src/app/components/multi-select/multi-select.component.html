@@ -1,0 +1,27 @@
+﻿<div class="mq-select-wrapper multi-select-wrapper select-item-container">
+    <igx-combo #templateCombo class="combo combo-width" [data]="items" [itemsMaxHeight]="288" [itemHeight]="36" 
+               [filterable]="false" [displayDensity]="'compact'" [type]="'border'" [allowCustomValues]="false"
+               [(ngModel)]="selectedItems" (ngModelChange)="handleSelection($event)" (onOpening)="handleOpening()" (onClosed)="handleClosed()" [disabled]="isDisabled">
+
+        <ng-template igxComboItem let-display>
+            <div class="item">
+                <span class="item-text">{{display.value === undefined ? display.name :display.value  }}</span>
+            </div>
+        </ng-template>
+
+        <ng-template igxComboHeader>
+            <div class="multi-select-header">
+                <igx-checkbox class="check-all" [checked]="isAllChecked" [indeterminate]="isIndeterminate" (change)="selectAll($event)">
+                    <div class="all-text">{{allText}}</div>
+                </igx-checkbox>
+            </div>
+        </ng-template>
+
+        <ng-template igxComboToggleIcon let-collapsed>
+            <igx-icon class="mq-dropdown-icon">arrow_drop{{ collapsed ? '_down' : '_up' }}</igx-icon>
+        </ng-template>
+
+        <ng-template igxComboClearIcon>
+        </ng-template>
+    </igx-combo>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <app-header (onAddNew)="handleAddNew()" (onBack)="handleBack()"></app-header>
+        </div>
+    </div>
+    <div class="row">
+        <div class="separator"></div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div [ngSwitch]="state"> 
+                <app-splash *ngSwitchCase="State.default"></app-splash>
+                <app-list *ngSwitchCase="State.list"></app-list>               
+                <app-new-group *ngSwitchCase="State.add"></app-new-group>
+            </div>
+
+        </div>
+    </div>
+</div>
+<app-toast></app-toast>

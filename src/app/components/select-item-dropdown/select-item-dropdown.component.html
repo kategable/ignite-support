@@ -1,0 +1,23 @@
+<div class="select-item-container">
+    <div class="list-container-search">
+        <igx-input-group type="border" class="select-item-dropdown-inputgroup"
+            [ngClass]="{'stepper-highlight': isHighlighted}" [displayDensity]="'compact'"
+            [igxDropDownItemNavigation]="dropDown" #inputGroup [igxToggleAction]="dropDown">
+            <input igxInput class="select-jobs-text" placeholder={{placeholder}} readonly="readonly"
+                (keydown.ArrowDown)="openDropDown()" [value]="getSelectedItemName()" [disabled]="disabled || !list">
+            <igx-suffix class="dropdownToggleButton">
+                <igx-icon [ngClass]="{'disable-arrow':disabled}" class="dropdown-icon">
+                    arrow_drop{{ dropDown.collapsed ? '_down' : '_up' }}</igx-icon>
+            </igx-suffix>
+        </igx-input-group>
+    </div>
+</div>
+<igx-drop-down #dropDown class="select-jobs-dropdown" [displayDensity]="'compact'" [maxHeight]="maxHeight"
+    [width]="width" (onSelection)="handleSelection($event)" (onOpening)="handleOnOpening()"
+    (onClosing)="handleOnClosing()" (onOpened)='handleOpened()'>
+    <igx-drop-down-item *ngFor="let item of list " #dropDownItem class="select-jobs-dropdown-item select-jobs-item"
+        [selected]="getIdPropertyValue(item)===getIdPropertyValue(selectedItem)" [value]="item"
+        [ngClass]="{'font-weight-bold':getIdPropertyValue(item)===getIdPropertyValue(selectedItem)}">
+        <span class='col-name'>{{getDisplayPropertyValue(item)}}</span>
+    </igx-drop-down-item>
+</igx-drop-down>

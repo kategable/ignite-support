@@ -1,0 +1,50 @@
+ 
+@import '../../../pg.component-variables.scss';
+
+.igx-input-group--compact .igx-input-group__input {
+  font-size: $aon-font-size;
+  padding-left: $aon-padding-left;
+}
+
+.margin-right-arrow {
+  margin-right: -8px;
+}
+
+input.igx-input-group__input.select-jobs-text {
+  font-family: $aon-font-family;
+  color: $text-color;
+  font-weight: normal;
+  cursor: pointer;
+  
+}
+ 
+.select-item-container {
+  .list-container-search {
+    width: auto;
+    border: 1px;
+    &:hover {
+        box-shadow: $border-highlight;  
+        
+      }
+      
+  }
+ 
+}
+
+.select-jobs-dropdown-item {
+  font-family: $aon-font-family;
+  font-size: $aon-font-size;
+  height: 36px; 
+}
+
+.select-jobs-item {
+  &:nth-child(even):not(:hover):not(.igx-drop-down__item--selected):not(.igx-drop-down__item--focused) {
+    background-color: $background-color2;
+    color: $text-color;
+  }
+  
+} 
+.dropdown-icon {
+    color: $highlight-color;
+    margin-right: -4px;
+}

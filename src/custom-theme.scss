@@ -1,0 +1,119 @@
+
+@import "pg.component-variables.scss";
+@import '~igniteui-angular/lib/core/styles/themes/index';
+@include igx-core();
+$custom-palette: igx-palette(
+
+    $primary: #cc0000,
+    $secondary: #cc0000,
+    $surface: #fff,
+    $error: #ff134a,
+    $success: #4eb862,
+    $warn: #fbb13c,
+    $info: #1377d5,
+    $grays: #000
+);
+@include igx-theme($palette: $custom-palette, $schema: $light-schema, $roundness: null, $elevation: null, $legacy-support: true);
+@include igx-typography($font-family: "'Arial Bold', 'Arial'", $type-scale: $default-type-scale);
+
+  
+ 
+
+@include igx-theme($custom-palette);
+
+$custom-drop-down-theme: igx-drop-down-theme(
+  $background-color: $background-color1,
+  $header-text-color: igx-color($custom-palette, "secondary"),
+  $item-text-color: $text-color,
+  $selected-item-background: igx-color($custom-palette, "secondary"),
+  $selected-item-text-color: $background-color1,
+  $selected-hover-item-background: igx-color($custom-palette, "secondary"),
+  $selected-hover-item-text-color: $background-color1,
+  $selected-focus-item-background: igx-color($custom-palette, "secondary"),
+  $selected-focus-item-text-color: $background-color1,
+  $focused-item-background: igx-color($custom-palette, "secondary"),
+  $focused-item-text-color: $background-color1,
+  $hover-item-background: igx-color($custom-palette, "secondary"),
+  $hover-item-text-color: $background-color1,
+  $shadow: 0px 1px 6px rgba(0, 0, 0, 0.35),
+  $border-radius: 0px,
+  $border-color: $border-color,
+  $border-width: 1px
+);
+ 
+ 
+@include igx-drop-down($custom-drop-down-theme);
+
+
+$aon-input-group-theme: igx-input-group-theme(
+  $border-border-radius: 0px,
+  $box-border-radius: 0px,
+  $search-border-radius: 0px,
+  $palette: $custom-palette,
+  $filled-text-color:  $text-color,
+  $focused-text-color:  $text-color,
+  $border-background: $background-color1,
+  $disabled-bottom-line-color: $border-disabled-color,
+  $border-color: $border-color,
+  $disabled-border-color: $border-disabled-color, 
+  $hover-border-color:  $border-color,
+  $placeholder-color: $text-color,
+  $focused-border-color: $border-color,
+
+);
+ 
+$aon-tree-grid-theme: igx-grid-theme( 
+  $row-selected-text-color:$highlight-color,
+  $header-text-color: $text-color, 
+  $header-border-width : 1px,
+  $row-selected-background: $background-color1,
+  $row-odd-text-color:$text-color,
+  $row-even-text-color:$text-color,
+  $row-hover-text-color:$highlight-color,
+  $cell-selected-background:$background-color1, 
+  $cell-selected-text-color:$highlight-color,
+  $group-row-selected-background:$background-color1,
+  $cell-active-border-color:$background-color1,
+  $row-border-color:$background-color1,
+  $header-background:$background-color1,
+  $row-odd-background:$background-color1,
+  $row-even-background:$background-color1,
+  $row-hover-background: $background-color2,
+  $expand-icon-hover-color: $blue-on-white-color,
+  $expand-icon-color:$blue-on-white-color,
+  $active-expand-icon-color:$blue-on-white-color,
+  $row-selected-hover-background: $background-color2,
+  $active-expand-icon-hover-color: $blue-on-white-color
+);
+/* .igx-grid__td--selected 
+{
+  background-color: #ffffff;
+  background: #ffffff;
+}
+.igx-grid__td--selected 
+{
+  background-color: #ffffff;
+  background: #ffffff;
+} */
+@include igx-grid($aon-tree-grid-theme);
+@include igx-input-group($aon-input-group-theme);
+ 
+
+$aon-checkbox-theme: igx-checkbox-theme( $palette: $custom-palette, $fill-color: $text-color2, $empty-color: $text-color2 );
+@include igx-checkbox($aon-checkbox-theme);
+
+.error{
+  $custom-toast-theme: igx-toast-theme(
+    $background: $highlight-color,
+    $border-radius: 1px);
+  // Pass the theme to the igx-toast component mixin
+  @include igx-toast($custom-toast-theme);
+}
+.info{
+  $custom-toast-theme: igx-toast-theme(
+    $background: $border-color,
+    $text-color : $text-color,
+    $border-radius: 1px);
+  // Pass the theme to the igx-toast component mixin
+  @include igx-toast($custom-toast-theme);
+}

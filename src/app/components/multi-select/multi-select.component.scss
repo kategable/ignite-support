@@ -1,0 +1,141 @@
+﻿
+$white-color: #FFFFFF;
+$red-color: #CC0000;
+$text-color: #333333;
+$help-color: #999999;
+$border-color: #CCCCCC;
+$size-16: 1rem;
+$size-14: 0.875rem;
+$size-12: 0.75rem;
+$size-10: 0.625rem;
+$checkbox-color: $help-color;
+$select-text-color: #CC0000;
+
+
+.igx-display-container {
+    font-family: Arial, Helvetica, sans-serif;
+
+    .item-text {
+        font-size: $size-12;
+        color: $text-color;
+    }
+
+    .igx-drop-down__item--focused {
+        background: $white-color;
+
+        .item-text {
+            color: $text-color;
+        }
+    }
+
+    .igx-drop-down__item--selected {
+        background: $white-color;
+
+        .item-text {
+            color: $select-text-color;
+            font-weight: bold;
+        }
+    }
+
+    .igx-drop-down__item--selected.igx-drop-down__item--focused {
+        background: $white-color;
+    }
+
+    .igx-drop-down__item:hover {
+        background: #F2F2F2;
+
+        .item-text {
+            color: $select-text-color;
+            font-weight: bold;
+        }
+    }
+
+    .igx-checkbox__composite {
+        margin-bottom: 0px;
+        padding: 0;
+        font-size: $size-10;
+    }
+
+    .igx-checkbox__composite-wrapper {
+        font-size: $size-10;
+    }
+
+    .igx-checkbox__ripple {
+        display: none;
+    }
+
+    .igx-checkbox__input {
+        position: absolute;
+    }
+}
+
+.igx-input-group__input:focus.red-help-text, .igx-input-group__textarea:focus.red-help-text {
+    color: $select-text-color;
+}
+
+.multi-select-wrapper {
+    font-family: Arial, Helvetica, sans-serif;
+
+    .help-text {
+        font-size: $size-12;
+        color: $help-color;
+    }
+
+    .red-help-text {
+        color: $select-text-color;
+    }
+
+    .igx-button--icon:hover {
+        color: $white-color;
+        background: $white-color;
+    }
+
+    .igx-button--icon:focus {
+        color: $white-color;
+        background: $white-color;
+    }
+
+    .igx-button--icon:active {
+        color: $white-color;
+        background: $white-color;
+    }
+
+    .igx-checkbox__ripple {
+        display: none;
+    }
+
+    .igx-ripple__inner {
+        display: none;
+    }
+}
+
+.multi-select-header {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid $border-color;
+
+    .all-text {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: $size-12;
+        color: $text-color;
+        width: 18em;
+    }
+
+    .igx-checkbox__composite {
+        margin-bottom: 0px;
+        padding: 0;
+        font-size: $size-10;
+    }
+
+    .igx-checkbox__composite-wrapper {
+        font-size: $size-10;
+    }
+
+    .igx-checkbox__ripple {
+        display: none;
+    }
+
+    .igx-checkbox__input {
+        position: absolute;
+    }
+}
+

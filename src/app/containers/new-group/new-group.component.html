@@ -1,0 +1,31 @@
+<div class="component-container new-group-container">
+    <div class="toolbox container">
+        <div class="row toolbox-row">
+            <div class="col-4">
+                <span>Survey</span>
+                <app-select-item-dropdown #surveysList [idProperty]="'id'" [displayProperty]="'name'"
+                    (onSelected)="handleSelectedSurvey($event)" [list]="surveys$ | async"
+                    [selectedItem]="selectedSurvey">
+
+                </app-select-item-dropdown>
+            </div>
+            <div class="col-4">
+                <span>Country</span>            
+                <app-tree-select [dataSource]="zones$ | async" [childDataKey]="'countries'"
+                    [selectedItems]="selectedCountries$ | async" [searchPlaceholderText]="'Countries'"
+                    [primaryKeyField]="'name'"
+                    (selectedItemsChange)="handleSelectedCountry($event);"></app-tree-select>
+
+            </div>
+            <div class="col-4">
+                <span>New Group Name</span>
+                <app-input></app-input>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div *ngIf="!allSelected()">
+    <app-splash></app-splash>
+</div>

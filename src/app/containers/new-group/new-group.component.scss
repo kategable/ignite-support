@@ -1,0 +1,18 @@
+@import '../../../pg.component-variables.scss';
+
+.toolbox{
+    height: 100px;
+}
+span{
+    color: $text-color3;
+    line-height: 14px;
+    font-size: 14px;
+}
+.toolbox-row{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.new-group-container{
+    margin-top:10px;
+}
