@@ -1,41 +1,61 @@
-﻿@import '../../../pg.component-variables.scss';
+﻿@import "../../../pg.component-variables.scss";
 
 #tree-input {
-    font-family: $aon-font-family;
-    font-size: $aon-font-size;
-    color: $text-color;
-    font-weight: normal;
-    cursor: pointer;    
+  font-family: $aon-font-family;
+  font-size: $aon-font-size;
+  color: $text-color;
+  font-weight: normal;
+  cursor: pointer;
+}
+.header-cell {
+  cursor: pointer;
+  top: -3px;
+  position: relative;
+  display: inline-block;
+}
+.dropdown-icon {
+  color: $highlight-color;
+  margin-right: -4px;
+}
+.group-name {
+  //color: $blue-on-white-color;
+}
+.igx-checkbox {
+  padding-left: 8px;
+  padding-top: 8px;
+}
+.igx-grid__thead-wrapper {
+  .igx-grid__tr {
+    .igx-grid__cbx-selection {
+      border: none;
+    }
   }
-.header-cell{
-    cursor: pointer;    
-    top: -3px;
-    position: relative;
-    display: inline-block;
-}
-  .dropdown-icon {
-    color: $highlight-color;
-    margin-right: -4px;
-} 
-.group-name
-{
-    //color: $blue-on-white-color;
-}
-.igx-checkbox{
-    padding-left: 8px;
-    padding-top:8px;
-}
-.igx-grid__thead-wrapper{
-.igx-grid__tr{
-.igx-grid__cbx-selection{
-  border:none;
-}
-}
 }
 
-.igx-grid__tree-grouping-indicator
-{
-    color:#0296DE;
-    font-weight: 400;
+.igx-grid__tree-grouping-indicator {
+  color: #0296de;
+  font-weight: 400;
 }
-
+:host{
+  ::ng-deep{
+    //header text style
+    .igx-grid__th-title{
+      font-size: 16px;
+      font-style: italic;
+      color: red;
+    }
+    //header style
+    .igx-grid__thead-item{
+       background-color: pink;
+       border: 5px solid red;
+    }
+    //row selection column
+    .igx-grid__cbx-selection{
+      border-right: 0px; //remove the border 
+    }
+    //selection column header
+    .igx-grid__thead-wrapper .igx-grid__tr, .igx-grid__tfoot .igx-grid__tr{
+      background-color: brown;
+    }
+  }
+}
