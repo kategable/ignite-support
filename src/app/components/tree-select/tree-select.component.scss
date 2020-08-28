@@ -36,7 +36,7 @@
   color: #0296de;
   font-weight: 400;
 }
-:host{
+ 
   ::ng-deep{
     //header text style
     .igx-grid__th-title{
@@ -58,4 +58,4 @@
       background-color: brown;
     }
   }
-}
+ 
