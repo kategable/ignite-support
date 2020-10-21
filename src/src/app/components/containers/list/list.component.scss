@@ -1,0 +1,96 @@
+@import "../../../../radnet.variables.scss";
+#list-component {
+    background-color: $rad-background-color-gray;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 17px;
+    padding-right: 12px;
+}
+.panel-icon {
+    cursor: pointer;
+}
+.pending {
+    color: $rad-icon-color-gold;
+}
+.valid {
+    color: $rad-icon-green-color;
+}
+.invalid {
+    color: $rad-icon-red-color;
+}
+.warning {
+    color: $rad-icon-color-gold;
+}
+.gray {
+    color: $rad-icon-gray-color;
+}
+.expired{
+    color: $rad-icon-green-color;
+    opacity: 0.4;
+}
+i {
+    font-size: 23px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+.header {
+    margin-right: -10px;
+}
+
+.action-icon {
+    padding-right: 5px;
+}
+.status-icon {
+    padding-right: 10px;
+}
+.peer-group-body {
+    margin: 20px;
+    background-color: $rad-background-color-gray;
+    width: 96%;
+}
+
+.action-row {
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.scroll-panel {
+    height: 800px;
+}
+
+.cont-header {
+    padding-bottom: 5px;
+}
+.name {
+    line-height: 36px;
+}
+.left-icons {
+    padding-left: 5px;
+}
+.red-bold {
+    color: $rad-icon-red-color;
+    font-weight: bold;
+}
+
+.details-container {
+    padding-left: 4px;
+    padding-right: 5px;
+}
+.igx-expansion-panel__header-title{
+    margin-right:12px;
+}
+
+.grayed-out-look{
+    opacity: 0.3;
+}
+
+.name-col{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right:0px;
+}
+ 
+.col{
+    padding-left:10px;
+    padding-right:10px;
+}

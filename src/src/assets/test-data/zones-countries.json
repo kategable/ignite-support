@@ -1,0 +1,1034 @@
+{
+   "total":4,
+   "results":[
+   {
+     "id": 1,
+     "name": "Americas",
+     "countries": [
+       {
+         "id": 216,
+         "RecordId": "35fdc9fa-15ec-429d-ae6e-30eec5d98c13",
+         "name": "United States",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS",
+           "PTS",
+           "PLS"
+         ]
+       },
+       {
+         "id": 9,
+         "RecordId": "98462698-8048-465d-b58a-bfe73e9f5dc1",
+         "name": "Argentina",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 28,
+         "RecordId": "79f27388-1282-4023-b38d-4bd8ce89a2da",
+         "name": "Brazil",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 36,
+         "RecordId": "0da56cec-5b2f-447d-b36f-5ef0e562595b",
+         "name": "Canada",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 41,
+         "RecordId": "914ac6cc-5990-493a-9003-1ff70dc8663c",
+         "name": "Chile",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 47,
+         "RecordId": "439b8658-f639-4247-8f66-52a9d9e35a70",
+         "name": "Colombia",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 51,
+         "RecordId": "86da188c-590b-4f14-bd62-bb3ee2cb3607",
+         "name": "Costa Rica",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 59,
+         "RecordId": "1a86f1a2-4159-42eb-95de-ab9a4e5a74c3",
+         "name": "Dominican Republic",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 60,
+         "RecordId": "036417cf-cd00-4f79-bf6c-47b83ba3c097",
+         "name": "Ecuador",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 62,
+         "RecordId": "f58974f3-0b60-4125-8ccf-cb90a72dd0ba",
+         "name": "El Salvador",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS"
+         ]
+       },
+       {
+         "id": 85,
+         "RecordId": "518193c2-29d0-4b57-be03-e4ebb6a7b34d",
+         "name": "Guatemala",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 131,
+         "RecordId": "a982b7e4-6f53-476c-ba04-0db9371e0b27",
+         "name": "Mexico",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 159,
+         "RecordId": "34caec03-925d-4aeb-bf6e-5a94de3776b3",
+         "name": "Panama",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 162,
+         "RecordId": "c0cdc136-4839-462f-b45c-cac2569f72c1",
+         "name": "Peru",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 167,
+         "RecordId": "c2db983f-09d2-4a3f-829b-67110c0082c2",
+         "name": "Puerto Rico",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 217,
+         "RecordId": "9e39c64f-74be-47fb-acde-7519150d1dd5",
+         "name": "Uruguay",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 220,
+         "RecordId": "c3fc9a34-3102-4984-94fb-f1008336eec1",
+         "name": "Venezuela",
+         "DisplayOrder": 0,
+         "countryZone": "Americas",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       }
+     ]
+   },
+   {
+      "id":2,
+     "name": "Middle East / Africa",
+     "countries": [
+       {
+         "id": 3,
+         "RecordId": "c2b1de5d-4f8c-42a7-8a6a-1fe1a34dc310",
+         "name": "Algeria",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 16,
+         "RecordId": "63e54a81-b0c5-498e-85b4-4acdb81f5969",
+         "name": "Bahrain",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 61,
+         "RecordId": "f9ae9f9c-d4bb-42bd-97f0-7043441a70e4",
+         "name": "Egypt",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 99,
+         "RecordId": "63c4d54e-965c-4ade-80f4-637e5f97e8af",
+         "name": "Israel",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 103,
+         "RecordId": "cb378de1-0880-4324-9c0c-6f5678de4d1e",
+         "name": "Jordan",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 105,
+         "RecordId": "be1c2dc4-098d-4153-830f-be1ef9056cef",
+         "name": "Kenya",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 108,
+         "RecordId": "52b9ca55-14d7-433c-9ded-f26c7bbb12ba",
+         "name": "Kuwait",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 112,
+         "RecordId": "31d0efaf-9cfe-48b0-b902-5f3723849d6a",
+         "name": "Lebanon",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 129,
+         "RecordId": "24f446a5-c8f1-48c3-ad00-60825110b063",
+         "name": "Mauritius",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS"
+         ]
+       },
+       {
+         "id": 138,
+         "RecordId": "507059a1-fe62-483c-acc8-5812b15c83e7",
+         "name": "Morocco",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 150,
+         "RecordId": "34c27d74-1a10-45f6-b0bc-d91018f60e43",
+         "name": "Nigeria",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 155,
+         "RecordId": "34271fb0-a99f-4578-be4d-40f744ea8694",
+         "name": "Oman",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS"
+         ]
+       },
+       {
+         "id": 168,
+         "RecordId": "5bb2048e-ba46-45ca-b7f7-bef70ed127d1",
+         "name": "Qatar",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 178,
+         "RecordId": "27d7478c-1aa9-40a3-a7a3-8451bb35eb1f",
+         "name": "Saudi Arabia",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 188,
+         "RecordId": "106f37f7-b50f-455f-bf3b-f3a005e3d41b",
+         "name": "South Africa",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 207,
+         "RecordId": "2ab12a6b-5a2d-4019-afa9-9595d23842b1",
+         "name": "Tunisia",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 214,
+         "RecordId": "c8a3cf00-aaf9-4e3d-9ca4-05841599d166",
+         "name": "United Arab Emirates",
+         "DisplayOrder": 0,
+         "countryZone": "Middle East / Africa",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       }
+     ]
+   },
+   {
+     "id":3,
+     "name": "Asia / Pacific",
+     "countries": [
+       {
+         "id": 12,
+         "RecordId": "3db26cf6-4377-434a-ae73-0c7b63c37419",
+         "name": "Australia",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 17,
+         "RecordId": "913dc547-3f07-4471-90d7-3f1769afb439",
+         "name": "Bangladesh",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS"
+         ]
+       },
+       {
+         "id": 42,
+         "RecordId": "a5a8df44-85da-4bf2-b2d6-eab016b3f3f3",
+         "name": "China",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 43,
+         "RecordId": "d34ac191-c4c7-48b1-baf9-39d1ed7820fc",
+         "name": "Hong Kong",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 94,
+         "RecordId": "accf7ab0-3b69-4aeb-a7dc-aaef9c3af98a",
+         "name": "India",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 95,
+         "RecordId": "e2a4aaab-39db-4aca-b81f-ecb79e22a317",
+         "name": "Indonesia",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 102,
+         "RecordId": "2b9871b6-f90a-4e20-b25b-f28276dffe72",
+         "name": "Japan",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 104,
+         "RecordId": "b2c873e3-da81-427d-a8e3-fd9cae03c79f",
+         "name": "Kazakhstan",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 44,
+         "RecordId": "e4e0475d-85db-4fa6-a780-147be9c7c523",
+         "name": "Macau",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS"
+         ]
+       },
+       {
+         "id": 122,
+         "RecordId": "ff66e143-042a-4be7-b5bf-ff01039a1707",
+         "name": "Malaysia",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 147,
+         "RecordId": "88c1f6cc-f7f5-482b-bd1f-b517467f2780",
+         "name": "New Zealand",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 156,
+         "RecordId": "df5dd946-12eb-48d6-9a63-9f67b720369b",
+         "name": "Pakistan",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 163,
+         "RecordId": "3ba65c81-ba23-4aa4-8c82-6644e2777279",
+         "name": "Philippines",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 183,
+         "RecordId": "cd85f8e1-5c74-4883-a6ac-82e2a363ae26",
+         "name": "Singapore",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 107,
+         "RecordId": "0f0f2c1c-5131-4e4d-a8b5-62feb4bd70b9",
+         "name": "South Korea",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 190,
+         "RecordId": "6f36b277-2870-4d5b-8585-9af10dc19735",
+         "name": "Sri Lanka",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 198,
+         "RecordId": "0dd7eeca-8358-4b50-8a26-d40af7777317",
+         "name": "Taiwan",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 201,
+         "RecordId": "54f8fc78-86a7-49fb-aae0-a8f52b5f7a5c",
+         "name": "Thailand",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 221,
+         "RecordId": "da4984be-8505-46a4-a9d4-25ca94330107",
+         "name": "Vietnam",
+         "DisplayOrder": 0,
+         "countryZone": "Asia / Pacific",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       }
+     ]
+   },
+   {
+     "id": 4,
+     "name": "Europe",
+     "countries": [
+       {
+         "id": 13,
+         "RecordId": "a2f66bfe-1c94-466e-a442-2c485cf5c143",
+         "name": "Austria",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 19,
+         "RecordId": "c9b86d73-f291-46eb-b8bf-1da5859aef9c",
+         "name": "Belarus",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS"
+         ]
+       },
+       {
+         "id": 20,
+         "RecordId": "76d6979f-4e71-4a72-9e1a-2f7c4182a20a",
+         "name": "Belgium",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 31,
+         "RecordId": "7f718f94-4df5-436f-a19b-8bcfec9f8d3d",
+         "name": "Bulgaria",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 52,
+         "RecordId": "a1e6f1d0-7daa-462d-9657-f60f5120e05e",
+         "name": "Croatia",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 54,
+         "RecordId": "25813794-f4c7-4d10-baf2-4aeaf49539d0",
+         "name": "Cyprus",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS"
+         ]
+       },
+       {
+         "id": 55,
+         "RecordId": "56aad5dd-71f5-4b08-8ba6-347d8533aef0",
+         "name": "Czech Republic",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 56,
+         "RecordId": "6dd53d72-eb00-4642-a800-e6c601a4ac87",
+         "name": "Denmark",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 65,
+         "RecordId": "7ddd7578-5555-4cca-be93-b0d2746d6cd1",
+         "name": "Estonia",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 70,
+         "RecordId": "577f7bca-de65-4694-97cc-0e62551587ac",
+         "name": "Finland",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 71,
+         "RecordId": "0f4564c5-804b-486d-9a02-3742edc32ba3",
+         "name": "France",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 77,
+         "RecordId": "3e57c74c-0603-4efc-9ee9-af4624ed52fc",
+         "name": "Germany",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 80,
+         "RecordId": "29a2ccf5-8a49-4e5d-9ee6-7c191ae2dd57",
+         "name": "Greece",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 92,
+         "RecordId": "dead0741-ee64-4156-8deb-d9c5eb2271ab",
+         "name": "Hungary",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 98,
+         "RecordId": "aa057895-97a2-44e5-86f9-224411ff243a",
+         "name": "Ireland",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 100,
+         "RecordId": "98869410-da74-41f7-b7fc-bc2a0542d3a1",
+         "name": "Italy",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 111,
+         "RecordId": "38140103-b15f-4a39-ab5e-0d9e9685bfa7",
+         "name": "Latvia",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 117,
+         "RecordId": "ab6b753d-b6bb-4f47-aaf4-9caa02288e31",
+         "name": "Lithuania",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 118,
+         "RecordId": "ada4bca9-3cd6-4ad6-95ca-570d3865213a",
+         "name": "Luxembourg",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 144,
+         "RecordId": "075d1940-d3f5-4495-a1be-286da90245ae",
+         "name": "Netherlands",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 154,
+         "RecordId": "957e678b-42b3-408f-9f2a-31608245b303",
+         "name": "Norway",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 165,
+         "RecordId": "ee91cd61-d252-4f0e-9bbd-c74615bf916d",
+         "name": "Poland",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 166,
+         "RecordId": "b78a09c1-46d0-42af-b5e5-a70a010e6130",
+         "name": "Portugal",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 170,
+         "RecordId": "953816a9-648d-4837-9be6-585644561e76",
+         "name": "Romania",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 171,
+         "RecordId": "ef6ac037-875a-4317-8372-412f4a8d13b3",
+         "name": "Russia",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 180,
+         "RecordId": "16386a53-9a23-45c5-a7b4-78e4674b35d0",
+         "name": "Serbia",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 184,
+         "RecordId": "3f1d3797-8137-47be-8643-1aa067d40352",
+         "name": "Slovakia",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 185,
+         "RecordId": "36e21824-f4b9-4c1b-8772-767d3cddea5e",
+         "name": "Slovenia",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 189,
+         "RecordId": "3e014247-379d-48ac-bf4b-d80a2caa07ae",
+         "name": "Spain",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 195,
+         "RecordId": "d7cac16b-21ba-4833-87a7-896a23b0b68b",
+         "name": "Sweden",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 196,
+         "RecordId": "1a0fe149-f8f1-487c-909e-f130aaa43f96",
+         "name": "Switzerland",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 208,
+         "RecordId": "52b08141-8ca8-4dba-865b-bf8056e3df1c",
+         "name": "Turkey",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 213,
+         "RecordId": "5b581e30-2c6e-4002-90d3-fe0d91597956",
+         "name": "Ukraine",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       },
+       {
+         "id": 215,
+         "RecordId": "62b8c8ed-4937-49e3-8a59-9c54f53d7c5c",
+         "name": "United Kingdom",
+         "DisplayOrder": 0,
+         "countryZone": "Europe",
+         "surveyCodes": [
+           "GTS",
+           "GLS",
+           "GSS"
+         ]
+       }
+     ]
+   }
+ ]
+}

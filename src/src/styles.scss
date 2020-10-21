@@ -1,0 +1,177 @@
+@import "./custom-theme.scss";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "@fortawesome/fontawesome-pro/css/all.css";
+
+@import "./radnet.variables.scss";
+@import "./custom-ignite-styles.scss";
+
+  .component-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .h6 {
+    font-family: $h7-font-family;
+    font-weight: $h7-font-weight;
+    font-size: $h7-font-size;
+    line-height: $h7-line-height;
+    color: $h6-color;
+  }
+
+  .h7 {
+    font-family: $h7-font-family;
+    font-weight: $h7-font-weight;
+    font-size: $h7-font-size;
+    line-height: $h7-line-height;
+    color: $h7-color;
+  }
+  .h12 {
+    font-family: $h16-font-family;
+    font-weight: $h16-font-weight;
+    font-size: $h12-font-size;
+    line-height: $h16-line-height;
+    color: $h16-color;
+  }
+  .h16 {
+    font-family: $h16-font-family;
+    font-weight: $h16-font-weight;
+    font-size: $h16-font-size;
+    line-height: $h16-line-height;
+    color: $h16-color;
+  }
+  .h23 {
+    font-family: $h23-font-family;
+    font-weight: $h23-font-weight;
+    font-size: $h23-font-size;
+    line-height: $h23-line-height;
+    color: $h23-color;
+  } 
+  .h24 {
+    font-family: $h24-font-family;
+    font-weight: $h24-font-weight;
+    font-size: $h24-font-size;
+    line-height: $h24-line-height;
+    color: $h24-color;
+    cursor: pointer;
+
+  }
+  .h25 {
+    font-family: $h25-font-family;
+    font-weight: $h25-font-weight;
+    font-size: $h25-font-size;
+    line-height: $h25-line-height;
+    color: $h25-color;
+  }
+  .h26 {
+    font-family: $h26-font-family;
+    font-weight: $h26-font-weight;
+    font-size: $h26-font-size;
+    line-height: $h26-line-height;
+    color: $h26-color;
+  }
+  .link-span {
+    color: $links-color;
+    font-size: $links-font-size;
+    font-family: $links-font-family;
+    cursor: pointer;
+  }
+  .igx-input-group--compact .igx-input-group__input {
+    font-size: $aon-font-size;
+    padding-left: $aon-padding-left;
+  }
+
+  input.igx-input-group__input {
+    font-family: $rad-font-family;
+    color: $rad-text-color;
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  .validation-error {
+    width: 100%;
+    vertical-align: middle;
+    color: $rad-error-message-error-color-red;
+    font-size: $h7-font-size;
+    font-style: italic;
+    font-weight: normal;
+  }
+
+  .igx-checkbox--indeterminate .igx-checkbox__composite-mark {
+    stroke-dashoffset: 37;
+    top: 1px;
+  }
+  .igx-checkbox__composite {
+    min-width: 12px;
+    width: 12px;
+    height: 12px;
+    padding:0px;
+  }
+
+  .disable-arrow {
+    opacity: 0.4;
+  }
+
+  .igx-input-group__bundle-main {
+    caret-color: $rad-text-color;
+  }
+
+  .h25 {
+    font-family: $h25-font-family;
+    font-weight: $h25-font-weight;
+    font-size: $h25-font-size;
+    line-height: $h25-line-height;
+    color: $h25-color;
+  }
+
+  .button-text-4 {
+    font-family: $button-text-4-font-family;
+    font-weight: $button-text-4-font-weight;
+    font-size: $button-text-4-font-size;
+    line-height: $button-text-4-line-height;
+    color: $button-text-4-color;
+  }
+
+  .button-text-5 {
+    font-family: $button-text-5-font-family;
+    font-weight: $button-text-5-font-weight;
+    font-size: $button-text-5-font-size;
+    line-height: $button-text-5-line-height;
+    color: $button-text-5-color;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+ 
+  @media (min-width: 1200px) {
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl {
+      max-width: 1205px;
+    }
+  }
+  .bold {
+    font-weight: bold;
+  }
+
+  .clear-selection-icon {
+    color: $rad-error-message-error-color-red;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .popoverIcon {
+    font-size: 16px;
+    color: $rad-expansion-icon-color-blue;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  input[type="checkbox"]{
+    display: none;
+  }
+  .h16-grid {
+    font-family: $h16-font-family;
+    font-weight: $h16-font-weight;
+    font-size: $h16-font-size;
+    line-height: $h16-line-height; 
+  }

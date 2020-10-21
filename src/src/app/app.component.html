@@ -1,0 +1,44 @@
+<app-navigation></app-navigation>
+<div class="container app-pear-groups">
+    <div class="row">
+        <div class="col-12">
+            <app-header [state]="state$ | async" [isAddNew]="false" (onAddNew)="handleAddNew()"
+                (onSearch)="filterGroups($event)"
+                [isHighlighted]="searchText?.length > 0  && (filteredGroups$  | async).length === 0">
+            </app-header>
+        </div>
+    </div>
+    <div class="row separator-row">
+        <div class="separator"></div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <ng-container
+        *ngIf="(isDefaultView$ | async) && searchText?.length > 0  && (filteredGroups$  | async).length === 0; else splashView">
+        <div class="row no-items-found align-items-center">
+            <div class="col-auto icon-col">
+                <i class="fal fa-exclamation-square invalid"></i>
+            </div>
+            <div class="col-auto no-items-col">
+                <div class="h12">
+                    <span>Sorry, we couldn't find any results for your search criteria.</span>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #splashView>
+        <div class="row">
+            <div class="col-12">
+                <div [ngSwitch]="state$ | async">
+                     
+                    <app-splash *ngSwitchDefault></app-splash>
+                    <app-splash *ngSwitchCase="State.default"></app-splash>
+                    <app-list [list]="filteredGroups$ | async" *ngSwitchCase="State.list"></app-list>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>

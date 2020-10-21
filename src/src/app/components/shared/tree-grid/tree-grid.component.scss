@@ -1,0 +1,79 @@
+::ng-deep {
+
+	.igx-grid__tree-cell--padding-level-1{
+		margin-left:-10px
+	}
+	.igx-grid__td{
+		margin-left:-10px
+	}
+	.igx-grid__tree-grouping-indicator{
+		margin-left:-8px;
+	}
+	//header style
+	.igx-grid__thead-item {
+		border-right: 0px;
+	}
+	//row selection column
+	.igx-grid__thead-title,
+	.igx-grid__th,
+	.igx-grid__cbx-selection {
+		border-right: 0px; //remove the border
+	}
+	.igx-grid__thead {
+		height: 36px;
+	}
+	//header text style
+	.igx-grid__th-title {
+		margin-left: -23px;
+	}
+	.igx-grid__thead-wrapper {
+		.igx-grid__cbx-selection {
+			margin-left: -15px;
+		}
+	}
+
+	.igx-checkbox__ripple {
+		display: none;
+	} 
+	.igx-grid__cbx-padding{
+		margin-right: -13px;
+		margin-left: -1px;
+		margin-top: 6px;
+	}
+	.igx-button--icon{
+		&:hover {
+			box-shadow: none;  
+			background: none;
+			
+		  }
+		  &:focus{
+			box-shadow: none;  
+			background: none;
+		  }
+		  &:active {
+			box-shadow: none;  
+			background: none;
+	
+		  }
+	}
+}
+
+.header-cell {
+	cursor: pointer;
+	top: 7px;
+	position: relative;
+	display: inline-block;
+	height: 40px;
+}
+
+.igx-checkbox {
+	padding-left: 8px;
+	padding-top: 8px;
+}
+.dropdown-icon {   
+    margin-right: -19px;
+}
+
+.less-margin{
+	margin-left:-24px;
+}

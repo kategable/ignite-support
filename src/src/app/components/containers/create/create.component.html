@@ -1,0 +1,86 @@
+<app-navigation></app-navigation>
+<div class="component-container new-group-container">
+	<div class="container header-container">
+		<div class="row">
+			<div class="col-12">
+				<app-header [isAddNew]="true" (onBack)="handleBack()">
+				</app-header>
+			</div>
+		</div>
+		<div class="row separator-row">
+			<div class="separator"></div>
+		</div>
+	</div>
+
+	<form [formGroup]="peerGroupForm">
+		<div class="toolbox container">
+
+			<div class="row toolbox-row">
+				<div class="toolbox-col col-4">
+					<div class="h7 title">Survey</div>
+					<app-select-item-dropdown #surveysList [idProperty]="'id'" [displayProperty]="'name'" [disabled]="reviewEnabled"
+						[isHighlighted]="!reviewEnabled"
+						(onSelected)="handleSelectedSurvey($event)" [list]="surveys$ | async"
+						[selectedItem]="selectedSurvey">
+
+					</app-select-item-dropdown>
+				</div>
+				<div class="toolbox-col col-3">
+					<div class="h7 title">Country</div>
+					<app-tree-grid selectionText="Countries" [selectedItems]="selectedCountries$ | async"
+						[data]="zonesForSurvey$ | async" [disabled]="!selectedSurvey || reviewEnabled"
+						(selectedItemsChange)="handleSelectedCountry($event)" excludeParentsFromTotal="true">
+					</app-tree-grid>
+
+				</div>
+				<div class="toolbox-col col-5">
+					<div class="h7 title">New Group Name</div>
+					<igx-input-group
+						[ngClass]="{'error-state': isErrorState || peerGroupForm.controls['name'].errors?.duplicate}"
+						type="border" [displayDensity]="'compact'" #inputGroup>
+						<input igxInput name="peerGroupName" type="text" formControlName="name"
+							placeholder="Type to enter" />
+					</igx-input-group>
+					<div class="validation-error error-message">
+						<div *ngIf="!peerGroupForm.valid">{{errorMessage}}</div>
+						<div *ngIf="peerGroupForm.controls['name'].errors?.duplicate">
+							{{dupMessage}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="market-filters-box container" *ngIf="!(isDefaultView$ | async) && !reviewEnabled">
+			<div *ngIf="filters$ | async as filters">
+				<app-market-filter [filterData]="filters" [selectedFilters]="selectedFilters"
+					(onSelectedFiltersChange)="handleselectedFiltersChange($event)" (onReset)="handleOnReset()"
+					(onRefine)="handleOnRefine()">
+				</app-market-filter>
+
+			</div>
+		</div>
+
+		<div class="companies-box" *ngIf="!(isDefaultView$ | async) && !reviewEnabled">
+			<div *ngIf="filters$ | async as filters">
+				<app-company-filters (onNavigationToReview)="goToReview()">
+				</app-company-filters>
+			</div>
+
+		</div>
+		<div *ngIf="!reviewEnabled" class="container default-container">
+			<div class="row" *ngIf="isDefaultView$ | async">
+				<div class="col-12">
+					<div [ngSwitch]="state$ | async">
+						<app-splash *ngSwitchCase="State.default"></app-splash>
+						<app-list [list]="filteredGroups$ | async" *ngSwitchCase="State.list"></app-list>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div *ngIf=reviewEnabled>
+			<app-review-list></app-review-list>
+		</div>
+	</form>
+</div>

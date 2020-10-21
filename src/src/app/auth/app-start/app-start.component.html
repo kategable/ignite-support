@@ -1,0 +1,21 @@
+<div>
+	<ng-container *ngIf="environment.name=='portal' || environment.mode=='demo'; then portal; else spa" ></ng-container>
+</div>
+<ng-template #portal>
+	<div>
+		<router-outlet></router-outlet>
+	</div>
+</ng-template>
+<ng-template #spa>
+	<div>
+        <span>
+            <button *ngIf="!isLoggedIn" mat-button (click)="login()">Login</button>
+            <!-- <button *ngIf="isLoggedIn" mat-button (click)="logout()">Logout</button> -->
+        </span>
+	</div>	  
+		<router-outlet></router-outlet> 
+</ng-template>
+
+<app-toast></app-toast>
+<app-busy></app-busy>
+ 

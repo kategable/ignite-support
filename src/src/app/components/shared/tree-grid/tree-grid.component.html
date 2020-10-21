@@ -1,0 +1,78 @@
+<div class="tree-grid">
+	<igx-input-group type="border" [displayDensity]="'compact'">
+		<input
+			igxInput
+			readonly
+			[disabled]="disabled || data?.length == 0"
+			[ngClass]="{'search-container': selectedItems?.length > 0,'search-container-default': selectedItems?.length === 0 }"
+			[ngModel]="getSelectionText()"
+			[placeholder]="searchPlaceholderText"
+			(keydown.arrowdown)="toggle()"
+			(click)="open()"
+		/>
+
+		<igx-suffix
+			[disabled]="disabled || data?.length == 0"
+			igxButton="icon"
+			class="dropdownToggleButton"
+			(click)="toggle()"
+		>
+			<igx-icon
+				[ngClass]="{'disable-arrow':disabled}"
+				class="dropdown-icon"
+			>
+				arrow_drop{{ toggleRef.collapsed ? '_down' : '_up' }}</igx-icon
+			>
+		</igx-suffix>
+	</igx-input-group>
+
+	<div
+		class="toggle-content"
+		igxToggle
+		#toggleRef="toggle"
+		[style.width]="contentWidth"
+		(onClosing)="handleToggleClosing()"
+	>
+		<igx-tree-grid
+			igxPreventDocumentScroll
+			#treeGrid
+			[data]="data"
+			primaryKey="id"
+			foreignKey="parentId"
+			rowSelection="multiple"
+			cellSelection="none"
+			height="100%"
+			[rowHeight]="36"
+			(onRowSelectionChange)="handleSelection($event)"
+			(onCellClick)="handleCellClick($event)"
+			(onRowToggle)="handleRowToggle($event)"
+		>
+			<ng-template igxRowSelector let-rowContext>
+				<igx-checkbox
+					[checked]="rowContext.selected"
+					[readonly]="true"
+					[disableRipple]="true"
+					[indeterminate]="allSelectedFor(rowContext)"
+				></igx-checkbox>
+			</ng-template>
+			<igx-column field="name">
+				<ng-template igxCell let-cell="cell">
+					<div
+						class="cell__inner"
+						[ngClass]="{'less-margin':isFlat}"
+					>
+						<span class="h16-grid name">{{ cell.value }}</span>
+					</div>
+				</ng-template>
+
+				<ng-template igxHeader let-headContext>
+					<span
+						class="header-cell"
+						(click)="handleSelectAllClick($event)"
+						>Select All</span
+					>
+				</ng-template>
+			</igx-column>
+		</igx-tree-grid>
+	</div>
+</div>

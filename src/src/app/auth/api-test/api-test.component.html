@@ -1,0 +1,11 @@
+<p>api-test works!</p>
+<div>
+	<div *ngIf="(surveys$ | async) as surveys; else down">
+		{{surveys | json}}
+	</div>
+</div>
+<ng-template #down>
+	<div>Peer Group API might be down!</div>
+</ng-template>
+
+

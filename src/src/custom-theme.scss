@@ -1,0 +1,65 @@
+@import "radnet.variables.scss";
+@import "custom-ignite-styles.scss";
+@import "~@infragistics/igniteui-angular/lib/core/styles/themes/index";
+ 
+  @include igx-core();
+
+  @include igx-theme(
+    $palette: $custom-palette,
+    $schema: $light-schema,
+    $roundness: null,
+    $elevation: null,
+    $legacy-support: true
+  );
+  @include igx-typography($font-family: "'Arial Bold', 'Arial'", $type-scale: $default-type-scale);
+
+  @include igx-theme($custom-palette);
+
+  @include igx-grid($custom-tree-grid-theme);
+  @include igx-input-group($custom-input-group-theme); 
+
+  @include igx-checkbox($custom-checkbox-theme);
+
+  .error {
+    @include igx-toast($custom-toast-error-theme);
+  }
+  .info {
+    @include igx-toast($custom-toast-theme);
+  }
+  .dropdown-icon {
+    @include igx-icon($rad-icon-theme);
+  }
+
+  .market-filters-panel {
+    @include igx-css-vars($custom-panel-theme);
+    .igx-expansion-panel__header-inner {
+      height: 35px;
+    }
+    .igx-expansion-panel__body {
+      min-height: 127px;
+    }
+  }
+
+  @include igx-drop-down($custom-drop-down-theme);
+
+  .peer-groups-panel {
+    @include igx-css-vars($custom-panel-list-theme);
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.35);
+    margin-bottom: 5px;
+    width: 99%;
+    margin-left: 3px;
+    .igx-expansion-panel__header-inner {
+      height: 66px;
+    }   
+  }
+
+  .search-input-highlighted{
+    @include igx-input-group($search-input-group-theme);
+    font-family: $h16-font-family;
+    font-weight: $h16-font-weight;
+    font-size: $h16-font-size;
+  }
+
+
+
+//@include igx-css-vars($custom-button-theme);

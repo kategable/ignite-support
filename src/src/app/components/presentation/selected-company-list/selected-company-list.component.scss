@@ -1,0 +1,34 @@
+@import "../../../../radnet.variables.scss";
+#selected-company-list-component {
+    border: 1px solid #cccccc;
+    margin-left: -15px;
+    padding-left: 20px;
+    margin-right: 0px;
+    box-sizing: border-box;
+    background-color: white;
+    height: 200px;
+    overflow: hidden;
+}
+.scroll-panel {
+    height: 200px;
+}
+
+.line {
+    line-height: 30px;
+    margin: 0px;
+    margin-left: -5px;
+}
+
+.col-name {
+    padding-left: 0px;
+    padding-right: 15px;
+}
+.name {
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.col-check {
+    padding-right: 10px;
+    margin-left: -10px;
+    cursor: pointer;
+}

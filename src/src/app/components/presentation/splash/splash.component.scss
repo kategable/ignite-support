@@ -1,0 +1,24 @@
+@import "../../../../radnet.variables.scss";
+img {
+  width: 100%;
+}
+
+.splash-message {
+  position: absolute;
+  top: 25%;
+  left: 13%;
+
+  span {
+    padding-left: 10px;
+  }
+
+  hr {
+    margin-top: 2px;
+    margin-left: 9px;
+    border-top: 2px solid $rad-hr-color-blue;
+  }
+}
+.splash-outer-container {
+  margin-top: 0;
+  width: 100%;
+}

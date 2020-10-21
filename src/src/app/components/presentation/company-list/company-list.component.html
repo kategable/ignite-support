@@ -1,0 +1,100 @@
+<div id="company-list-component">
+
+    <div class="component-wrapper">
+        <ng-template #popTitle>
+            <span title="{{company.name}}">{{company.name}}</span><i [attr.closeOnClick]="true"
+                class="far fa-times info-dot-close"></i>
+        </ng-template>
+
+        <ng-template #popContent>
+            <div class="content-scroller">
+                <div class="company-description">
+                    <div class="container">
+                        <div class="row">
+                            <div class="fixed property">
+                                HQ Location:
+                            </div>
+                            <div class="col value">
+                                {{company.hqCode}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="fixed property">
+                                Industry:
+                            </div>
+                            <div class="col value">
+                                {{company.industryName}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="fixed property">
+                                Revenue:
+                            </div>
+                            <div class="col value">
+                                {{company.revenue}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="fixed property">
+                                Headcount:
+                            </div>
+                            <div class="col value">
+                                {{company.headcounts}}
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="fixed property">
+                          Ownership:
+                          </div>
+                          <div class="col value">
+                          {{company.ownership}}
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="fixed property">
+                          Organisation:
+                          </div>
+                          <div class="col value">
+                          {{company.orgTypeCode}}
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="fixed property">
+                          Submit Date:
+                          </div>
+                          <div class="col value">
+                          {{company.submitDateFriendlyFormat.replace('<','&lt;')}}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </ng-template>
+
+        <!-- Hook into ngbPopover -->
+        <div placement="choosePlacement()" class="popover-holder" #popover="ngbPopover" [popoverTitle]="popTitle"
+            [autoClose]="'outside'" [ngbPopover]="popContent" popoverClass="custom-popover" trigger="manual">&nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+
+            <cdk-virtual-scroll-viewport [itemSize]="10" [ngClass]="shouldHideScrollBar(popover)">
+                <div *cdkVirtualFor="let company of list; trackBy: trackByFn" class="line row">
+                    <div class="col-auto col-check">
+                        <igx-checkbox (change)="handleChangeSelection(company)" [checked]="company.selected">
+                        </igx-checkbox>
+                    </div>
+                    <div (click)="handleChangeSelection(company)" class="col col-name">
+                        <span class="name">{{ company.name }}</span>
+                    </div>
+                    <div class="col-auto float-right col-info">
+                        <i (click)="show(company, popover)" [ngClass]="shouldHideInfoDot(popover)"></i>
+                    </div>
+                </div>
+            </cdk-virtual-scroll-viewport>
+        </div>
+    </div>
+</div>

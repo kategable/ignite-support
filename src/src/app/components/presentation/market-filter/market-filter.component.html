@@ -1,0 +1,36 @@
+﻿<div class="market-filters-panel">
+    <igx-expansion-panel #panel (onCollapsed)="handleCollapsed($event)" [(collapsed)]="initValue">
+        <igx-expansion-panel-header [iconPosition]="'right'">
+            <igx-expansion-panel-title>
+                <span class="h23 mf-title">Market Filters</span>
+            </igx-expansion-panel-title>
+            <igx-expansion-panel-icon>
+                <span *ngIf="panel.collapsed"> <i class="panel-icon far fa-plus-square"></i></span>
+                <span *ngIf="!panel.collapsed"> <i class="panel-icon far fa-minus-square"></i></span>
+            </igx-expansion-panel-icon>
+        </igx-expansion-panel-header>
+        <igx-expansion-panel-body *ngIf="!panel.collapsed">
+            <div class="container">
+                <div class="row justify-content-between row-info">
+                    <span class="col call-to-action h16">Add Market filters to refine your Peer Companies</span>
+                    <span class="reset link-span col" (click)="resetSelectedFilter()">Reset Filters</span>
+                </div>
+                <div class="row row-filter-selection" *ngIf="filterData">
+                    <div class="col-3" *ngFor="let filter of filterData;let i = index">
+                        <app-tree-grid [selectionText]="filter.name" [searchPlaceholderText]="filter.name"
+                            [selectedItems]="filter.selectedValues" [data]="filter.values"
+                            [contentWidth]="getWidth(filter)"
+                            (selectedItemsChange)="handleSelectedItemsChange(filter, $event);"
+                            [isFlat]="!isTree(filter)">
+                        </app-tree-grid>
+                    </div>
+                </div>
+                <div class=" row justify-content-between row-info">
+                    <span class="reset col">
+                        <span class="h23 refine" [ngClass]="{'disabled' : selectedFilters?.length ===0}" (click)="refine()">Refine</span>
+                    </span>
+                </div>
+            </div>
+        </igx-expansion-panel-body>
+    </igx-expansion-panel>
+</div>

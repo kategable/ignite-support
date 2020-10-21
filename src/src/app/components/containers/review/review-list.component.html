@@ -1,0 +1,51 @@
+  <div class="container cont-header">
+    <div class="row">
+      <div class="col">
+        <span class="span-label">Please review and <strong>Select</strong> your Peer group(s) below and continue with the <strong>Validation</strong> process.</span>
+        <span class="link-span float-right">Select All</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="review-list-component" class="container">
+    <cdk-virtual-scroll-viewport [itemSize]="25" class="scroll-panel">
+      <div class="peer-groups-panel" *cdkVirtualFor="let group of reviews; trackBy: trackByFn ">
+        <igx-expansion-panel #panel (onCollapsed)="handleCollapsed($event)" (onExpanded)="handleExpanded($event)">
+          <igx-expansion-panel-header class="header" (onInteraction)="onInteraction($event)">
+            <igx-expansion-panel-title>
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <span class="h26 name">{{group.peerGroupDisplayName}}</span>
+                  </div>
+                  <div class="col">
+                    <span class="h7">{{group.countryName}}</span>
+
+                  </div>
+                  <div class="col-auto">
+                    <span class="h7">{{group.surveyCode}}</span>
+
+                  </div>
+                  <div class="col">
+                    <span class="h7">#Companies: {{group.companies?.length}}</span>
+
+                  </div>
+                </div>
+              </div>
+            </igx-expansion-panel-title>
+            <igx-expansion-panel-icon>
+              <span *ngIf="panel.collapsed"> <i class="fal fa-plus-square panel-icon"></i> </span>
+              <span *ngIf="!panel.collapsed"> <i class="fal fa-minus-square panel-icon"></i> </span>
+            </igx-expansion-panel-icon>
+          </igx-expansion-panel-header>
+          <igx-expansion-panel-body *ngIf="!panel.collapsed">
+            <!--<div class="container peer-group-body">
+            </div>
+            <div class="container ">
+              
+            </div>-->
+          </igx-expansion-panel-body>
+        </igx-expansion-panel>
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </div>

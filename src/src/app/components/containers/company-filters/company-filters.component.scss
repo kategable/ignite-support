@@ -1,0 +1,167 @@
+@import "../../../../radnet.variables.scss";
+#comp-container {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 396px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    background-color: $rad-background-color-gray;
+    .arrow-right {
+        border: solid #cccccc;
+        border-width: 0 1px 1px 0;
+        display: inline-block;
+        padding: 12px;
+        margin-top: 5px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+    .arrow-col {
+        margin-left: -23px;
+    }
+    .title {
+        line-height: 36px;
+        margin-left: -15px;
+    }
+    .stepper-box {
+        height: 36px;
+        border: 1px solid;
+        margin-left: 0px;
+        padding-left: 20px;
+        margin-top: 10px;
+        margin-right: 0px;
+        border-color: #cccccc;
+        box-sizing: border-box;
+        background-color: white;
+    }
+    .search {
+        padding: 5px;
+        margin-left: -5px;
+    }
+    .select-all {
+        padding-right: 0px;
+        line-height: 46px;
+    }
+    .row-list {
+        border: 1px solid #cccccc;
+        margin-left: 0px;
+        padding-left: 20px;
+        margin-right: 0px;
+        box-sizing: border-box;
+        background-color: white;
+    }
+    .clear-selection {
+        padding-right: 0px;
+        line-height: 46px;
+        margin-right: 5px;
+    }
+    .header-col {
+        height: 46px;
+    }
+
+    .selection-col {
+        line-height: 46px;
+        padding-left: 10px;
+    }
+    .selection-row {
+        margin-left: -15px;
+    }
+    .buttons-row {
+        padding-top: 30px;
+    }
+    .nothingSelected {
+        background-color: $rad-background-color-dark-gray;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        border-right: 1px solid $rad-border-color-1;
+        border-bottom: 1px solid $rad-border-color-1;
+    }
+    .nothing-col {
+        padding-left: 0px;
+    }
+    .list-col {
+        padding-right: 0px;
+    }
+    .nothing-text {
+        padding-left: 36px;
+    }
+}
+.pg-review-button {
+    border-width: 0px;
+    font-family: $button-text-4-font-family;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    color: $rad-button-text-color-gray;
+    background-color: $rad-button-color-red;
+    width: 150px;
+    height: 36px;
+}
+.pg-reset-button {
+    border: 1px solid $rad-border-color-1;
+    background: -webkit-linear-gradient(
+        270deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(228, 228, 228, 1) 100%,
+        rgba(228, 228, 228, 1) 100%
+    );
+    background: -moz-linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(228, 228, 228, 1) 100%,
+        rgba(228, 228, 228, 1) 100%
+    );
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(228, 228, 228, 1) 100%,
+        rgba(228, 228, 228, 1) 100%
+    );
+    box-sizing: border-box;
+    font-family: $button-text-4-font-family;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    color: $button-text-4-color;
+    width: 120px;
+    height: 36px;
+}
+button:focus {
+    outline: none;
+}
+button:disabled {
+    opacity: 0.4;
+}
+i {
+    font-size: 23px;
+    font-weight: 400;
+    margin-top: 5px;
+    padding-left: 36px;
+}
+
+.invalid {
+    color: $rad-icon-red-color;   
+}
+.icon-col{
+    padding-bottom: 82px;
+    padding-right: 10px;
+    padding-left: 63px;
+}
+.no-items-found {
+    background-color: $rad-background-color-dark-gray;
+    width: 100%;
+    margin: auto;
+    border-left: 1px solid $rad-border-color-1;
+    border-right: 1px solid $rad-border-color-1;
+    border-bottom: 1px solid $rad-border-color-1;
+    height: 200px;
+}
+
+.no-items-col {
+    padding-left: 0px;
+    padding-bottom: 70px;
+}

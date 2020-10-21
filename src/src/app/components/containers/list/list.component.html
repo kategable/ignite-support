@@ -1,0 +1,95 @@
+<div id="list-component"  >
+  <div class="container cont-header">
+    <div class="row">
+      <div class="col">
+        <span  class="link-span float-right">Refresh All Data</span>
+      </div>
+    </div>
+  </div>
+
+	<div class="peer-groups-panel" *ngFor="let group of list; trackBy: trackByFn ">
+      <igx-expansion-panel #panel (onCollapsed)="handleCollapsed($event)" (onExpanded)="handleExpanded($event)">
+        <igx-expansion-panel-header class="header" (onInteraction)="onInteraction($event)">
+          <igx-expansion-panel-title>
+            <div class="container details-container">
+              <div class="row row-cols-8">
+                <div class="col-3 name-col" [ngClass]="{'grayed-out-look':group.disabledLook}" >
+                  <span [title]="group.peerGroupDisplayName"  class="h26 name">{{group.peerGroupDisplayName}}</span>
+
+                </div>
+                <div class="col">
+                  <span [title]="group.countryName" [ngClass]="{'grayed-out-look': group.disabledLook}" class="h7">{{group.countryName}}</span>
+
+                </div>
+                <div class="col">
+                  <span [ngClass]="{'grayed-out-look': group.disabledLook}" class="h7">{{group.surveyCode}}</span>
+
+                </div>
+                <div class="col">
+                  <span [ngClass]="{'grayed-out-look': group.disabledLook}" class="h7">#Companies: {{group.companies ? group.companies.length : 0}}</span>
+
+                </div>
+                <div class="col">
+                  <span [ngClass]="{'grayed-out-look': group.disabledLook}" class="h7">Effective Date: {{group.effectiveDate  | date:'MM/dd/yyyy'}}</span>
+                </div>
+                <div class="col">
+                  <span [ngClass]="{'grayed-out-look': group.disabledLook}" *ngIf="group.canRefreshFlag" class="h7 red-bold">Refresh Data</span>
+                </div>
+               
+                <div class="col-auto action-icon">
+                  <i (click)="duplicate($event)" title="Duplicate Peer Group" class="fal fa-clone gray"></i>
+                </div>
+                <div class="col-auto status-icon">
+                  <i title="unknown" *ngIf="group.statusId=== null" class="fal fa-question-square"></i>                 
+                  <i [title]="group.statusName" *ngIf="group.statusId===1" class="fal fa-check-square valid"></i>
+                  <i [title]="group.statusName" *ngIf="group.statusId===2" class="fal fa-exclamation-square invalid"></i>
+				          <i [title]="group.statusName" *ngIf="group.statusId===3" class="fal fa-clock pending"></i>
+				          <i [title]="group.statusName" *ngIf="group.statusId===4" class="fal fa-exclamation-square warning"></i>
+				          <i [title]="group.statusName" *ngIf="group.statusId===-1" class="fal fa-check-square expired"></i>
+                </div>
+              </div>
+            </div>
+          </igx-expansion-panel-title>
+          <igx-expansion-panel-icon class="left-icons">
+            <span *ngIf="panel.collapsed"> <i class="fal fa-plus-square panel-icon"></i> </span>
+            <span *ngIf="!panel.collapsed"> <i class="fal fa-minus-square panel-icon"></i> </span>
+          </igx-expansion-panel-icon>
+        </igx-expansion-panel-header>
+        <igx-expansion-panel-body *ngIf="!panel.collapsed">
+          <div class="container peer-group-body">
+            <div class="row  ">
+              <div class="col-auto">
+                <span class="button-text-4">Created by:</span>
+                <span class="button-text-5"> {{group.createdBy}}</span>
+              </div>
+              <div class="col-auto">
+                <span class="button-text-4">Status:</span>
+                <span class="button-text-5 green"> {{group.statusName}}</span>
+              </div> 
+              <div class="col-auto">
+                <span class="button-text-4">Created by:</span>
+                <span class="button-text-5 green"> {{group.createdByName}}</span>
+              </div> 
+            <div class="col-auto">
+              <span class="button-text-4">Companies:</span>
+              <div *ngFor="let comp of group.companies" class="button-text-5 green">  
+                <span>{{comp.name}}</span>
+              </div>
+            </div>
+          </div>
+            <div class="row ">
+
+
+            </div>
+
+          </div>
+          <div class="container ">
+            <div class="row action-row ">
+              <div class="col-auto link-span" (click)="panel.toggle()">Hide</div>
+              <div class="col-auto link-span red">Delete Group</div>
+            </div>
+          </div>
+        </igx-expansion-panel-body>
+      </igx-expansion-panel>
+    </div> 
+</div>

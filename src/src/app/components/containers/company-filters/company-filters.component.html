@@ -1,0 +1,95 @@
+<div id="comp-container" class="container">
+    <div class="row stepper-box">
+        <div class="header col">
+            <span class="h26 title">Peer Companies</span>
+        </div>
+        <div class="col-auto arrow-col">
+            <i class="arrow-right"></i>
+        </div>
+        <div class="header col">
+            <span class="h26 title">My Selections</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 list-col">
+            <div class="row row-list">
+                <div class="col-8 search">
+                    <app-search-input [isHighlighted]="searchText?.length > 0  && (filteredCompanies$  | async).length === 0" (onSearch)="handleSearch($event)"></app-search-input>
+
+                </div>
+                <div class="col-4">
+                    <span *ngIf="filteredCompanies$ | async as filteredCompanies">
+                        <span (click)="selectAll(filteredCompanies)" class="link-span float-right select-all">Select
+                            all</span>
+                    </span>
+
+                </div>
+            </div>
+            <ng-container *ngIf="searchText?.length > 0  && (filteredCompanies$  | async).length === 0; else companyList">
+                <div class="row no-items-found align-items-center">
+                    <div class="col-auto icon-col">                         
+                            <i class="fal fa-exclamation-square invalid"></i>                                                   
+                    </div>
+                    <div class="col-auto no-items-col">
+                        <div class="h6 "> 
+                            <span>Sorry, we couldn't find any results for your search criteria.</span>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-template #companyList>
+                <app-company-list [list]="filteredCompanies$  | async"
+                    (onChangeSelection)="handleChangeSelection($event)">
+
+                </app-company-list>
+
+            </ng-template>
+
+
+
+        </div>
+
+        <ng-container
+            *ngIf="(selectedCompanies$ | async)?.length > 0 && selectedCompanies$ | async as selectedCompanies; else nothingSelected">
+            <div class="col-6">
+                <div class="row row-list selection-row">
+                    <div class="col-6 selection-col">
+                        <span class="h25 selected"><span class="h25 bold">{{selectedCompanies.length}}</span> Companies
+                            Selected</span>
+                    </div>
+                    <div class="col-6">
+                        <span (click)="clearSelection()" class="link-span float-right clear-selection">Clear
+                            Selections</span>
+                    </div>
+                </div>
+                <app-selected-company-list [list]="selectedCompanies"
+                    (onClearOneSelection)="handleClearOneSelection($event)">
+
+                </app-selected-company-list>
+            </div>
+        </ng-container>
+
+        <ng-template #nothingSelected>
+            <div class="col-6 nothing-col">
+                <div class="row nothingSelected align-items-center ">
+                    <div class="col-auto ">
+                        <div class="h6 nothing-text">Please select 10 or more companies per country with or without
+                            market filters
+                        </div>
+                        <div class="h6 nothing-text">to make sure they appear in your report.</div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+
+    <div class="row justify-content-end buttons-row">
+        <div class="col-auto">
+            <button (click)="reset()" class="pg-reset-button">Reset</button>
+        </div>
+        <div class="col-auto">
+            <button (click)="navigateToReview($event)" class="pg-review-button"
+                [disabled]="(selectedCompanies$ | async).length < 10">Review Jobs</button>
+        </div>
+    </div>
+</div>

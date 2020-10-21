@@ -1,0 +1,144 @@
+@import "radnet.variables.scss";
+@import "~@infragistics/igniteui-angular/lib/core/styles/themes/index";
+
+$custom-palette: igx-palette(
+    $primary: #cc0000,
+    $secondary: #cc0000,
+    $surface: $rad-surface-color-light,
+    $error: $rad-border-color-1,
+    $success: $rad-border-color-1,
+    $warn: #fbb13c,
+    $info: #1377d5,
+    $grays: #000,
+);
+$custom-drop-down-theme: igx-drop-down-theme(
+    $background-color: $rad-surface-color-light,
+    $header-text-color: igx-color($custom-palette, "secondary"),
+    $item-text-color: $rad-text-color,
+    $selected-item-background: igx-color($custom-palette, "secondary"),
+    $selected-item-text-color: $rad-surface-color-light,
+    $selected-hover-item-background: igx-color($custom-palette, "secondary"),
+    $selected-hover-item-text-color: $rad-surface-color-light,
+    $selected-focus-item-background: igx-color($custom-palette, "secondary"),
+    $selected-focus-item-text-color: $rad-surface-color-light,
+    $focused-item-background: igx-color($custom-palette, "secondary"),
+    $focused-item-text-color: $rad-surface-color-light,
+    $hover-item-background: igx-color($custom-palette, "secondary"),
+    $hover-item-text-color: $rad-surface-color-light,
+    $shadow: 0px 1px 6px rgba(0, 0, 0, 0.35),
+    $border-radius: 0px,
+    $border-color: $rad-border-color-1,
+    $border-width: 1px,
+);
+$custom-input-group-theme: igx-input-group-theme(
+    $border-border-radius: 0px,
+    $box-border-radius: 0px,
+    $search-border-radius: 0px,
+    $palette: $custom-palette,
+    $filled-text-color: $rad-text-color,
+    $focused-text-color: $rad-text-color,
+    $border-background: $rad-surface-color-light,
+    $disabled-bottom-line-color: $rad-divider-color-20,
+    $border-color: $rad-border-color-1,
+    $disabled-border-color: $rad-divider-color-20,
+    $hover-border-color: $rad-border-color-1,
+    $placeholder-color: $rad-text-color,
+    $focused-border-color: $rad-border-color-1,
+    $disabled-text-color: $rad-text-color,
+    $disabled-placeholder-color: $rad-text-color,
+    $error-secondary-color: $rad-border-color-1,
+);
+
+$custom-tree-grid-theme: igx-grid-theme(
+    $row-selected-text-color: $rad-selected-color-red,
+    $header-text-color: $rad-text-color,
+    $header-border-width: 1px,
+    $row-selected-background: $rad-surface-color-light,
+    $row-odd-text-color: $rad-text-color,
+    $row-even-text-color: $rad-text-color,
+    $row-hover-text-color: $rad-selected-color-red,
+    $cell-selected-background: $rad-surface-color-light,
+    $cell-selected-text-color: $rad-selected-color-red,
+    $group-row-selected-background: $rad-surface-color-light,
+    $cell-active-border-color: $rad-surface-color-light,
+    $row-border-color: $rad-surface-color-light,
+    $header-background: $rad-surface-color-light,
+    $row-odd-background: $rad-surface-color-light,
+    $row-even-background: $rad-surface-color-light,
+    $row-hover-background: $rad-background-color-gray,
+    $expand-icon-hover-color: $rad-expansion-icon-color-blue,
+    $expand-icon-color: $rad-expansion-icon-color-blue,
+    $active-expand-icon-color: $rad-expansion-icon-color-blue,
+    $row-selected-hover-background: $rad-surface-color-light,
+    $active-expand-icon-hover-color: $rad-expansion-icon-color-blue,
+);
+
+$custom-checkbox-theme: igx-checkbox-theme(
+    $palette: $custom-palette,
+    $fill-color: $rad-checkbox-color,
+    $empty-color: $rad-checkbox-color,
+);
+
+$custom-toast-theme: igx-toast-theme(
+    $background: $rad-border-color-1,
+    $text-color: $rad-text-color,
+    $border-radius: 1px,
+);
+//
+$custom-panel-theme: igx-expansion-panel-theme(
+    $header-background: $rad-background-color-dark-gray,
+    $header-focus-background: $rad-background-color-dark-gray,
+    $header-title-color: $icon-color-blue,
+    $header-icon-color: $icon-color-blue,
+    $body-background: $rad-background-color-gray,
+    $body-color: $rad-text-color,
+    $border-radius: 0,
+);
+$custom-panel-list-theme: igx-expansion-panel-theme(
+    $header-background: $rad-toolbox-color-12,
+    $header-focus-background: $rad-toolbox-color-12,
+    $header-title-color: $icon-color-blue,
+    $header-icon-color: $icon-color-blue,
+    $body-background: $rad-toolbox-color-12,
+    $body-color: $rad-text-color,
+    $border-radius: 0,
+);
+
+$custom-toast-error-theme: igx-toast-theme(
+    $background: $rad-error-color-10,
+    $border-radius: 1px,
+);
+$rad-icon-theme: igx-icon-theme(
+    $color: $rad-dropdown-icon-color,
+  );
+
+
+  $custom-button-theme: igx-button-theme(
+    $raised-text-color: #fdfdfd,
+    $raised-hover-text-color: #fdfdfd,
+    $raised-background: #345779,
+    $raised-hover-background: #2e4d6b,
+    $raised-focus-text-color: #fdfdfd,
+    $raised-focus-background: #2e4d6b,
+    $disabled-color: #2e4d6b
+);
+
+
+$search-input-group-theme: igx-input-group-theme(
+    $border-border-radius: 0px,
+    $box-border-radius: 0px,
+    $search-border-radius: 0px,
+    $palette: $custom-palette,
+    $filled-text-color: $rad-text-color,
+    $focused-text-color: $rad-text-color,
+    $border-background: $rad-surface-color-light,
+    $disabled-bottom-line-color: $rad-divider-color-20,
+    $border-color: $rad-icon-red-color,
+    $disabled-border-color: $rad-icon-red-color,
+    $hover-border-color: $rad-icon-red-color,
+    $placeholder-color: $rad-text-color,
+    $focused-border-color: $rad-icon-red-color,
+    $disabled-text-color: $rad-text-color,
+    $disabled-placeholder-color: $rad-text-color,
+    $error-secondary-color: $rad-icon-red-color,
+);

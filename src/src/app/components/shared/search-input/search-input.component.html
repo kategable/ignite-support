@@ -1,0 +1,12 @@
+<div [ngClass]="{'search-input-highlighted': isHighlighted}">
+    <igx-input-group type="border" [displayDensity]="'compact'" #inputGroup>
+        <igx-prefix class="search">
+            <igx-icon class="icon-search">search</igx-icon>
+        </igx-prefix>
+        <input igxInput [value]="searchValue" type="text" placeholder="Search..."
+            (input)="debounce($event.target.value)" />
+        <igx-suffix *ngIf="isSeachHasValue()" class="clear">
+            <igx-icon class="icon-clear" (click)="clearSearchValue()">clear</igx-icon>
+        </igx-suffix>
+    </igx-input-group>
+</div>

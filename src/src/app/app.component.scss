@@ -1,0 +1,40 @@
+@import '../radnet.variables.scss';
+:host {
+    height: 100%;
+    width: 100%;
+}
+
+.separator-row {
+    margin-bottom: 10px;
+}
+
+i {
+    font-size: 23px;
+    font-weight: 400;
+    margin-top: 5px;
+    padding-left: 36px;
+}
+
+.invalid {
+    color: $rad-icon-red-color;   
+}
+.icon-col{
+    margin-bottom: 213px;
+    padding-right: 10px;
+    padding-left: 333px;
+}
+.no-items-found {
+    background-color: $rad-background-color-gray;
+    width: 100%;
+    margin: auto;   
+    height: 500px;
+}
+
+.no-items-col {
+    padding-left: 0px;
+    margin-bottom: 215px;
+}
+
+.app-pear-groups{
+    min-height: 550px;
+}

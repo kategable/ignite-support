@@ -1,0 +1,67 @@
+@import "../../../../radnet.variables.scss";
+ 
+    .toolbox {
+        padding-left: 0px;
+        padding-top: 10px;
+        height: 100px;
+        margin-bottom: 10px;
+        background-color: $rad-background-color-gray;
+    }
+
+    .toolbox-row {
+        padding-left: 20px;
+        margin-left: 0px;
+        padding-top: 7px;
+        .toolbox-col {
+            padding-left: 0px;
+            padding-right: 20px;
+        } 
+    }
+
+    .new-group-container {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    .validation-error {
+        width: 100%;
+        vertical-align: middle;
+        color: $rad-error-message-error-color-red;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: normal;
+    }
+    :host {
+        ::ng-deep {
+            .error-state.igx-input-group.igx-input-group--required {
+                .igx-input-group__bundle {
+                    background-color: $rad-error-input-fill-error-color-yellow;
+                    box-shadow: none;
+                    -moz-box-shadow: none;
+                    -webkit-box-shadow: none;
+                }
+                -moz-box-shadow: $rad-border-highlight;
+                -webkit-box-shadow: $rad-border-highlight;
+                box-shadow: $rad-border-highlight;
+            }
+        }
+    }
+    .separator-row {
+        margin-bottom: 5px;
+    }
+    .header-container {
+        padding: 0px;
+    }
+
+    .market-filters-box {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    .title{
+        padding-bottom: 10px;
+    }
+
+    .default-container{
+        padding: 0px;
+    }

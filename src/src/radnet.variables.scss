@@ -1,0 +1,201 @@
+  
+ 
+$rad-font-family: "Arial Regular", "Arial";
+$aon-font-size: 12px;
+$aon-padding-left: 0px;
+
+$rad-pimary-color-1: #cccccc;
+$rad-pimary-color-2: #d7d7d7;
+$rad-pimary-color-3: #e4e4e4;
+$rad-pimary-color-4: #ededed;
+$rad-pimary-color-5: #f2f2f2;
+$rad-pimary-color-6: #0685a9;
+$rad-pimary-color-7: #0d94bb;
+$rad-pimary-color-8: #41addb;
+$rad-pimary-color-9: #4bbbec;
+$rad-pimary-color-10: #cc0000;
+$rad-pimary-color-11: #e11b22;
+$rad-pimary-color-12: #ffffff;
+$rad-secondary-color-13: #f0ab50;
+$rad-secondary-color-14: #7ab850;
+$rad-secondary-color-15: #00a611;
+$rad-secondary-color-16: #6e267b;
+$rad-secondary-color-17: #000000;
+$rad-secondary-color-18: #333333;
+$rad-secondary-color-19: #666666;
+$rad-secondary-color-20: #999999;
+$rad-secondary-color-21: #777777;
+
+$rad-surface-color-light: $rad-pimary-color-12;
+$rad-background-color-gray: $rad-pimary-color-5;
+$rad-background-color-light: $rad-pimary-color-12;
+
+
+$rad-toolbox-color-1: $rad-pimary-color-1;
+$rad-toolbox-color-12: $rad-pimary-color-12;
+$rad-toolbox-color-5: $rad-pimary-color-5;
+$rad-toolbox-color-6: $rad-pimary-color-6;
+$rad-toolbox-color-10: $rad-pimary-color-10;
+
+$rad-tab-color-1:$rad-pimary-color-1;
+$rad-tab-color-2:$rad-pimary-color-3;
+$rad-tab-color-5:$rad-pimary-color-5;
+
+$rad-menu-color-4:$rad-pimary-color-4;
+$rad-menu-color-9:$rad-pimary-color-9;
+$rad-menu-color-12:$rad-pimary-color-12;
+
+$rad-on-color-O1: $rad-pimary-color-12;
+$rad-on-color-O2: $rad-pimary-color-6;
+$rad-on-color-O3: $rad-pimary-color-7;
+$rad-on-color-O4: $rad-pimary-color-10;
+
+$rad-border-color-1: $rad-pimary-color-1;
+$rad-border-color-3: $rad-pimary-color-3;
+$rad-border-color-7: $rad-pimary-color-7;
+$rad-border-color-10: $rad-pimary-color-10;
+$rad-border-color-18: $rad-secondary-color-18;
+
+$rad-divider-color-1: $rad-pimary-color-1;
+$rad-divider-color-2: $rad-pimary-color-2;
+$rad-divider-color-3: $rad-pimary-color-3;
+$rad-divider-color-20: $rad-secondary-color-20;
+
+$rad-chart-blue-color-B2: #88D6F7;
+$rad-chart-blue-color-B3: $rad-pimary-color-9;
+$rad-chart-blue-color-B4: $rad-pimary-color-7;
+$rad-chart-blue-color-B5: $rad-pimary-color-6;
+$rad-chart-blue-color-B6: #006E91;
+$rad-chart-blue-color-B7: #19576D;
+$rad-chart-blue-color-B6: #19576D;
+$rad-chart-purple-color-P1: $rad-secondary-color-16;
+
+
+$rad-chart-gold-color-G1: $rad-secondary-color-13;
+$rad-chart-gold-color-G2: #D59439;
+$rad-chart-gold-color-G3: #BD7F24;
+$rad-chart-gold-color-G4: #A86D0D;
+$rad-chart-gold-color-G5: #8E5700;
+
+$rad-table-color-B1: #CFEAF7;
+$rad-table-color-1: $rad-pimary-color-1;
+$rad-table-color-20: $rad-secondary-color-20;
+$rad-table-color-12: $rad-pimary-color-12;
+$rad-table-color-10: $rad-pimary-color-10;
+$rad-table-color-6: $rad-pimary-color-6;
+$rad-table-color-18:  $rad-secondary-color-18;
+
+$rad-error-color-E1: #FFFFCC;
+$rad-error-color-10: $rad-pimary-color-10;
+
+$rad-dropdown-icon-color: $rad-pimary-color-10;
+
+
+$rad-selected-color-red:$rad-pimary-color-10;
+
+$rad-text-color: $rad-secondary-color-18;
+
+$rad-expansion-icon-color-blue: $rad-pimary-color-7;
+
+$rad-font-color-blue:$rad-toolbox-color-6;
+
+$rad-font-color-gray:  $rad-secondary-color-18;
+
+
+$h1-font-type: "Prelo Slab W01";
+$h1-font-weight: "Prelo Slab W01";
+$h1-font-size: "Prelo Slab W01";
+$h1-line-height: "Prelo Slab W01";
+$h1-color: "Prelo Slab W01";
+$h1-size: 1.125em;
+
+$h12-font-size: 16px; 
+
+$h16-font-family: Arial, sans-serif;
+$h16-font-weight: normal;
+$h16-font-size: 12px; 
+$h16-line-height: normal;
+$h16-color: $rad-font-color-gray;  
+
+$h23-font-family: "Arial Bold", Arial, sans-serif;
+$h23-font-weight: bold;
+$h23-font-size: 14px; 
+$h23-line-height: 35px;
+$h23-color: $rad-font-color-blue;  
+
+$h24-font-family: Arial, sans-serif;
+$h24-font-weight: normal;
+$h24-font-size: 12px; 
+$h24-line-height: normal;
+$h24-color: $rad-font-color-blue;  
+
+$h25-font-family: Arial, sans-serif;
+$h25-font-weight: normal;
+$h25-font-size: 16px; 
+$h25-line-height: normal;
+$h25-color: $rad-pimary-color-10;
+
+$h26-font-family: Arial, sans-serif;
+$h26-font-weight: normal;
+$h26-font-size: 14px; 
+$h26-line-height: normal;
+$h26-color: $rad-font-color-blue;  
+
+//H7  Arial, sans-serif Regular  14 Normal # 666666 1.125 em
+
+$h7-font-family: "Arial", "sans-serif Regular";
+$h7-font-weight: normal;    
+$h7-font-size: 14px;
+$h7-line-height: normal;
+$h7-color: $rad-secondary-color-19;
+
+$h6-color: $rad-text-color;
+ 
+//$h1-size: 1.125em;
+
+$button-text-4-font-family:"Arial Bold", Arial, sans-serif;
+$button-text-4-font-weight: bold;
+$button-text-4-font-size: 12px; 
+$button-text-4-line-height: 16px;
+$button-text-4-color: $rad-secondary-color-19;  
+
+$button-text-5-font-family:Arial, sans-serif;
+$button-text-5-font-weight: normal;
+$button-text-5-font-size: 12px; 
+$button-text-5-line-height: 16px;
+$button-text-5-color: $rad-secondary-color-19;  
+
+ 
+
+
+$rad-text-color-blue:  $rad-toolbox-color-6;  
+$links-color: $rad-text-color-blue;  
+$links-font-size: 14px; 
+$links-font-family:  Arial, sans-serif;
+
+$icon-color-blue: $rad-text-color-blue;
+
+$rad-checkbox-color:  $rad-secondary-color-20;
+$rad-icon-gray-color:  $rad-secondary-color-20;
+$rad-icon-green-color: $rad-secondary-color-15;
+$rad-icon-red-color: $rad-pimary-color-10;
+
+//$rad-border-highlight: 2px 3px 5px 0px $rad-border-color-10;//2px 3px 5px 0px rgba(204,0,0,0.35)
+$rad-border-highlight: 2px 3px 5px 0px rgba(204,0,0,0.35);
+
+
+
+
+$rad-error-input-fill-error-color-yellow: $rad-error-color-E1;
+$rad-error-message-error-color-red:  $rad-border-color-10;
+
+ 
+$rad-background-color-dark-gray: $rad-tab-color-2;
+$rad-border-hr-color-gray: $rad-pimary-color-12;
+$rad-hr-color-blue: $rad-pimary-color-9;
+$rad-toolbox-buttom-border-color-gray:$rad-border-color-1;
+
+$rad-icon-color-gold: $rad-secondary-color-13;
+$rad-button-text-color-gray: $rad-pimary-color-12;
+$rad-button-color-red: $rad-pimary-color-10;
+

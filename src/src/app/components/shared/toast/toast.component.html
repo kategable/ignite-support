@@ -1,0 +1,3 @@
+<div [ngClass]="{ 'error': isError, 'info': !isError }">
+    <igx-toast (click)="toast.hide()"  [autoHide]="true" #toast>{{message}}</igx-toast>
+</div>

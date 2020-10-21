@@ -1,0 +1,40 @@
+ 
+@import '../../../../radnet.variables.scss';
+
+ .margin-right-arrow {
+  margin-right: -8px;
+}
+
+.select-item-container {
+  .list-container-search {
+    width: auto;
+    border: 1px;
+    &:hover {
+        box-shadow: $rad-border-highlight;  
+        
+      }
+  }
+}
+
+.dropdown-disabled{
+  &:hover {
+    box-shadow: none !important;  
+  }
+}
+
+.select-item {
+  font-family: $rad-font-family;
+  font-size: $aon-font-size;
+  height: 36px; 
+}
+
+.select-item {
+  &:nth-child(even):not(:hover):not(.igx-drop-down__item--selected):not(.igx-drop-down__item--focused) {
+    background-color: $rad-background-color-gray;
+    color: $rad-text-color;
+  }
+  
+} 
+.dropdown-icon {   
+    margin-right: -4px;
+}

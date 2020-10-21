@@ -1,0 +1,186 @@
+@import "../../../../radnet.variables.scss";
+#company-list-component {
+    border: 1px solid $rad-border-color-1;
+    margin-left: 0px;
+    padding-left: 20px;
+    margin-right: 0px;
+    box-sizing: border-box;
+    background-color: white;
+    height: 200px;
+    overflow: hidden;
+}
+.search {
+    padding: 5px;
+}
+.select-all {
+    padding-right: 20px;
+    line-height: 46px;
+}
+.header-col {
+    height: 46px;
+}
+.scroll-panel {
+    height: 200px;
+}
+.scroll-panel-hide{
+    height: 200px;
+    overflow-y: hidden;
+}
+.name {
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.col-check {
+    padding-right: 10px;
+    margin-left: -15px;
+    z-index: 12;
+}
+.line {
+    line-height: 30px;
+    cursor: pointer;
+    margin: 0px;
+}
+.col-name {
+    padding-left: 0px;
+    padding-right: 15px;
+}
+
+.col-info {
+    line-height: 31px;
+    padding-right: 20px; 
+
+    &:hover > .popoverIcon {
+        visibility: visible;
+    }
+}
+.popoverIcon {
+    visibility: hidden;
+}
+
+.popoverIcon-hide {
+    visibility: hidden;
+}
+
+:host {
+    ::ng-deep {
+
+        
+     
+            .custom-popover {
+
+                width:350px;
+                box-shadow: 2px 2px 5px rgba(13, 148, 187, 0.35);
+                -moz-box-shadow: 2px 2px 5px rgba(13, 148, 187, 0.35);
+                -webkit-box-shadow: 2px 2px 5px rgba(13, 148, 187, 0.35);
+                max-width:350px; // overrides max-width inherited from .popover
+            
+                .info-dot-close {
+                    right: 10px;
+                    color: #0D94BB;
+                    font-size: 12px;
+                    font-weight: bold;
+                    position: absolute;
+                    top:8px;
+                    cursor: pointer;
+
+                }
+
+                
+                .info-dot-close-jump {
+
+                    right: 200px;
+                    color: yellow;
+                    font-size: 12px;
+                    font-weight: bold;
+                    position: absolute;
+                    top:8px;
+                    cursor: pointer;
+                    }
+                
+                .arrow {
+                    display: none !important;
+                }
+                
+                // part of the bootstrap component, controls formatting of the header part of the popover, i.e. the title
+                .popover-header {
+                    
+                    font-family: Arial, sans-serif;
+                    height: 26px;
+                    font-size: 14px;
+                    padding-top: 0px;
+                    padding-right: 20px;
+                    padding-bottom: 0px;
+                    padding-left: 10px;
+                    margin-top: 0px;
+                    white-space: nowrap; 
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    color:  #0D94BB;
+                    line-height: 2.0em;
+
+
+
+                }   
+
+                // part of the bootstrap component, controls formatting of the body part of the popover, i.e. the content
+                .popover-body {
+                    padding: 0px;    
+                }
+
+                .content-scroller {
+                
+                    overflow-y: scroll;
+                    color: #666666;
+                    padding-top: 5px;
+                    margin-left: 0px;
+                    margin-top: 0px;
+                    padding-left: 10px;
+                    padding-right: 20px;
+                    // height of whole popup
+                    height: 166px;
+                    
+                    .company-description {
+                        font-family: Arial, sans-serif;
+                        font-size:12px;
+                        line-height: 1.9em;
+
+                        .property {
+                            
+                            color: #999999
+                        }
+                        .value {
+                            color: #666666
+                        }
+                           
+                        .fixed {
+                            width:75px
+                        }
+
+                    }
+
+                 }
+            }
+        
+    }
+}
+
+// absolute ensure no line break afater company name before info icon
+// my left and top attrivutes control position of pop up menu 
+.component-wrapper {
+    position: absolute;
+    left:210px; 
+    top:136px;
+   
+    // border-color: royalblue; // debug
+    // border-style: dashed; // debug
+
+// and so i can move this guy but doesn't seem to alter position of my popup
+.popover-holder {
+    position: absolute;
+
+    
+    // border-style: dashed; // debug
+    
+    }
+}
+

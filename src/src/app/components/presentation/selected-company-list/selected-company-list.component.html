@@ -1,0 +1,20 @@
+<div id="selected-company-list-component" class="">
+
+    <div class="row">
+        <div class="col">
+            <cdk-virtual-scroll-viewport [itemSize]="10" class="scroll-panel">
+                <div *cdkVirtualFor="let company of list; trackBy: trackByFn" class="row line">
+                    <div class="col-auto">
+                        <i (click)="handleClearSelection(company)"
+                            class="far fa-times-square clear-selection-icon"></i>
+                    </div>
+                    <div  class="col-auto col-name">
+                        <span class="name">{{company.name}}</span>
+
+                    </div>
+
+                </div>
+            </cdk-virtual-scroll-viewport>
+        </div>
+    </div>
+</div>

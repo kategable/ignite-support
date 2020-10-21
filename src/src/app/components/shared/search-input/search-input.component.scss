@@ -1,0 +1,20 @@
+@import "../../../../radnet.variables.scss";
+.icon-search {
+	color: $rad-icon-gray-color;
+	margin-top: 4px;
+}
+.icon-clear {
+	color: $rad-icon-red-color;
+	font-weight: bold; 
+	cursor: pointer;
+
+}
+igx-icon {
+	font-size: 20px;
+	width: 20px;
+	height: 20px;
+}
+
+.search-input-highlighted .igx-input-group--compact .igx-input-group__input, .igx-input-group--compact .search-input-highlighted .igx-input-group__input{
+	font-size: $h16-font-size;
+}

@@ -1,0 +1,58 @@
+<div class="component-container header-outer-container">
+	<ng-container *ngIf="isAddNew; then create; else default "></ng-container>
+
+	<ng-template #default>
+		<div class="container">
+			<div class="row">
+				<div class="h9 col pad">
+					Peer Groups
+					<span class="far fa-info-circle shrinkandpushup" (click)="openInfo()"></span>
+				</div>
+				<div class="pad">
+					<span *ngIf="showInfo" class="info">
+						Peer Groups are hand-selected list of companies used for targeted benchmark analysis. Clients
+						often
+						create
+						distinct peer groups for executives vs broad-based benchmarking,
+						or for diverse business lines and key geographic regions with both global and local competitors
+						for
+						talent.
+						Importantly, all peer groups must include at least 10 companies and be
+						sufficiently different from one another to protect client confidentiality. <br />
+						<a (click)="hideInfo()">Hide</a>
+					</span>
+				</div>
+
+
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<hr class="header-hr" *ngIf="!showInfo">
+
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col pad button-container">
+					<button class="create-peer-group-button" (click)="addNew()">
+						Create Peer Group <span class="far fa-plus m-addbutton pullleftpushdown"></span>
+					</button>
+				</div>
+				<div class="col pad">
+					<app-search-input [isHighlighted]="isHighlighted" *ngIf="state===State.list" (onSearch)="handleSearch($event)"></app-search-input>
+				</div>
+			</div>
+
+		</div>
+	</ng-template>
+	<ng-template #create>
+		<div class="h9 pad new-group-header">
+			Create Peer Group<a id="backToLibrary" (click)="back()">&lt;&lt; Back to library</a>
+		</div>
+
+		<hr class="header-hr">
+
+	</ng-template>
+
+</div>
