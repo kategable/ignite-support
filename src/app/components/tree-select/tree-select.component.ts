@@ -1,397 +1,350 @@
-﻿import { Component, ViewChild, AfterViewInit, Input, EventEmitter, Output, SimpleChanges, OnChanges } from "@angular/core";
+﻿import {
+	Component,
+	EventEmitter,
+	Input,
+	OnChanges,
+	Output,
+	SimpleChanges,
+	ViewChild,
+	ViewChildren,
+} from '@angular/core';
 import {
-    VerticalAlignment,
-    HorizontalAlignment,
-    IgxToggleDirective,
-    IgxInputGroupComponent,
-    IgxInputDirective,
-    IgxTreeGridComponent,
-    AbsoluteScrollStrategy
-    , ConnectedPositioningStrategy
-    , IgxCheckboxComponent,
-    IRowToggleEventArgs
-    ,
-} from "@infragistics/igniteui-angular";
+	AbsoluteScrollStrategy,
+	ConnectedPositioningStrategy,
+	HorizontalAlignment,
+	IgxGridRowComponent,
+	IgxInputGroupComponent,
+	IgxToggleDirective,
+	IgxTreeGridComponent,
+	VerticalAlignment,
+} from '@infragistics/igniteui-angular';
+import { TreeChanges } from 'src/src/app/common/types/tree-changes.interface';
+import { Tree } from 'src/src/app/common/types/tree-interface';
+ export const ADDED_ACTION = 'added';
+export const REMOVED_ACTION = 'removed';
 
 @Component({
-    selector: "app-tree-select",
-    styleUrls: ["./tree-select.component.scss"],
-    templateUrl: "./tree-select.component.html"
+	selector: 'app-tree-select',
+	templateUrl: './tree-select.component.html',
+	styleUrls: ['./tree-select.component.scss'],
 })
-export class TreeSelectComponent implements AfterViewInit, OnChanges {
-    @ViewChild(IgxInputDirective, { read: IgxInputDirective, static: false })
-    public input: IgxInputDirective;
-    @ViewChild(IgxToggleDirective, { read: IgxToggleDirective, static: false })
-    public igxToggle: IgxToggleDirective;
-    @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: false })
-    public comboTreeGrid: IgxTreeGridComponent;
-    @ViewChild(IgxInputGroupComponent, { read: IgxInputGroupComponent, static: false })
-    public inputGroup: IgxInputGroupComponent;
+export class TreeSelectComponent implements OnChanges {
+	@Input() data: Tree[] = [];
+	@Input() selectedItems: Tree[] = [];
+	@Input() childDataKey: string;
+	@Input() searchPlaceholderText: string = "Select";
+	@Input() selectionText: string;
+	@Input() primaryKeyField: string;
+	@Input() contentWidth: string;
+	@Input() disabled: boolean = false;
+	@Input() isFlat: boolean = false;
+	@Input() excludeParentsFromTotal: boolean = false;
+	@Input() selectOneAcception: boolean = true;
+	@Input() highlightAcception: boolean = false;
+	@Output() selectedItemsChange = new EventEmitter<any>();
 
-    @ViewChild('allCheck', { read: IgxCheckboxComponent, static: false })
-    public allCheckBox: IgxCheckboxComponent;
+	@ViewChild(IgxTreeGridComponent, {
+		read: IgxTreeGridComponent,
+		static: false,
+	})
+	public comboTreeGrid: IgxTreeGridComponent;
+	@ViewChild(IgxInputGroupComponent, {
+		read: IgxInputGroupComponent,
+		static: false,
+	})
+	public inputGroup: IgxInputGroupComponent;
 
+	@ViewChild(IgxToggleDirective, { read: IgxToggleDirective, static: false })
+	public igxToggle: IgxToggleDirective;
 
-    @Input() dataSource: any[] = [];
-    @Input() selectedItems: any[];
-    @Input() childDataKey: any;
-    @Input() searchPlaceholderText: string;
-    @Input() primaryKeyField: string;
-    @Input() contentWidth: string;
-    @Input() countParent: boolean = false;
-    @Input() disabled: boolean = false;
-    @Output() selectedItemsChange = new EventEmitter<any>();
-    expandEnabled: boolean = true;
+		
+	private _positionSettings = {
+		horizontalStartPoint: HorizontalAlignment.Left,
+		verticalStartPoint: VerticalAlignment.Bottom,
+	};
+	private overlaySettings = {
+		closeOnOutsideClick: true,
+		modal: false,
+		positionStrategy: new ConnectedPositioningStrategy(
+			this._positionSettings
+		),
+		scrollStrategy: new AbsoluteScrollStrategy(),
+	};
+	dataHasManyLevels: boolean = false;
 
-    isOpen: boolean;
-    searchValue: string;
-    totalCount: number;
-    isAllChecked: boolean = false;
-    isAnyChecked: boolean = false;
-    isExpanded: boolean = true;
-    isAnyExpanded: boolean = true;
-    expansionStates: any;
-    public selectionMode = 'multiple';
-    public ngAfterViewInit() {
-        // check the selcted items passed
-        if (this.selectedItems?.length > 0) {
-            let rowIds = this.selectedItems.map(x => x[this.primaryKeyField]);
-            this.comboTreeGrid.selectRows(rowIds, false);
-        }
-        this.totalCount = this.setAncestorsForDatasourceItemAndGetCount(this.dataSource, []);
-        // this.expandEnabled = this.dataSource.some((item)=> item.children.length > 1);
-        this.isAnyChecked = this.selectedItems && this.selectedItems.length > 0;
-        if (this.selectedItems?.length > 0 && this.selectedItems.length === this.totalCount) {
-            this.isAllChecked = true;
-        }
-    }
-    isExpandEnabled(): boolean {
-        return false;// this.dataSource.some((item)=> item.children.length > 1);     
-    }
+	constructor() {}
 
-    setAncestorsForDatasourceItemAndGetCount(source: any[], parentIds: any[]): number {
-        let totalItemCount = 0;
-        for (var item of source) {
-            item["parents"] = parentIds;
-            totalItemCount += 1;
-            if (item[this.childDataKey] && item[this.childDataKey].length > 0) {
-                totalItemCount += this.setAncestorsForDatasourceItemAndGetCount(item[this.childDataKey], [...parentIds, item])
-            }
-        }
-        return totalItemCount;
-    }
+	handleSelectOneAcception() {
+		let element = document.getElementsByClassName('igx-grid__thead')[0];
+		if (!element) return;
+		element['hidden'] = false;
+		if (this.selectOneAcception && this.data.length === 1) {
+			element['hidden'] = true;
+			let event = {
+				added: this.data.map(i => i.id),
+				removed: [],
+			};
+			this.handleSelection(event);
+		}
+	}
+	handleSelection(event) {
+		event.cancel = true;
+		console.log("handleSelection",event);
+		
+		//main logic for the recursive data to select and unselect
+		if (this.canSelectionGetUpdated(event, ADDED_ACTION)) {
+			let parents = this.getParentsToUpdate(event.added, ADDED_ACTION);
+			if (parents?.length > 0) {
+				parents.map(i => event.added.push(i.id));
+			}
+			setTimeout(() => {
+				this.comboTreeGrid.selectRows(event.added, false);
+				this.emitSelectedValues();
+			}, 1);
+		}
+		if (this.canSelectionGetUpdated(event, REMOVED_ACTION)) {
+			let parents = this.getParentsToUpdate(
+				event.removed,
+				REMOVED_ACTION
+			);
+			if (parents?.length > 0) {
+				parents.map(i => event.removed.push(i.id));
+			}
+			setTimeout(() => {
+				this.comboTreeGrid.deselectRows(event.removed);
+				this.emitSelectedValues();
+			}, 1);
+		}
+	}
 
-    ngOnChanges(changes: SimpleChanges) {
-        if (typeof changes['selectedItems']) {
-            let changedSelectedItems = changes['selectedItems'];
-            if (!changedSelectedItems.firstChange) {
-                if (changedSelectedItems) {
-                    for (let item of this.dataSource) {
+	handleToggleClosing() {
+		this.comboTreeGrid.navigateTo(0, 0);
+	}
+	open() {
+       
+		if (!this.igxToggle.collapsed) {
+			return;
+		}
+		this.overlaySettings.positionStrategy.settings.target = this.inputGroup.element.nativeElement;
+		this.igxToggle.open(this.overlaySettings);
 
-                        let itemChildren = this.getChildren(item);
-                        let itemTreeRowIds = [];
-                        if (itemChildren) {
-                            itemTreeRowIds = itemChildren.map(x => x[this.primaryKeyField]);
-                        }
+		if (!this.contentWidth) {
+			this.contentWidth =
+				this.inputGroup.element.nativeElement.clientWidth + 'px';
+		}
+		this.comboTreeGrid.width = this.contentWidth;
 
-                        itemTreeRowIds.push(item[this.primaryKeyField]);
-                        this.comboTreeGrid.deselectRows(itemTreeRowIds);
-                        this.isAllChecked = false;
-                    }
-                }
-            }
-        }
-    }
-    public onRowClickChange(event: any) {
-        // cancel the event
-        if (event.cell && event.cell.cellID && event.cell.cellID.rowID) {           
-            this.onSelectorClick(null, {"rowID":event.cell.cellID.rowID });
-        }
-        event.cancel = true;
-    }
+		requestAnimationFrame(() => {
+			this.comboTreeGrid.rowList.first?.cells.first.element.nativeElement.focus();
+		});
+	}
+	toggle() {
+		if (this.igxToggle.collapsed) {
+			this.open();
+			return;
+		}
+		this.igxToggle.close();
+	}	 
 
+	handleSelectAllClick(event) {
+		//select all text only selects items
+		if (this.data?.length !== this.selectedItems?.length) {
+			this.comboTreeGrid.selectAllRows();
+			this.selectedItems = this.data;
+			this.emitSelectedValues();
+		}
+	}
 
-    OnHeaderClick(event: any) {
-        if (!this.isAllChecked) {
-            this.comboTreeGrid.selectAllRows();
-            this.isAllChecked = true;
-           // return;
-        }
-        this.comboTreeGrid.deselectAllRows();
-        this.isAllChecked = false;      
-        let selectedRows: any[] = [];
-        let selectedRowIds = [];
-        let unSelectedRows = [];
-        let unSelectedRowIds = [];
-        var fnAddAllRowsToBuckets = (selectedItem: any) => {
-            if (this.isAnyChecked) {
-                unSelectedRows.push(selectedItem);
-                unSelectedRowIds.push(selectedItem[this.primaryKeyField])
-            } else {
-                if (!this.selectedItems.some(x => x[this.primaryKeyField] === selectedItem[this.primaryKeyField])) {
-                    selectedRows.push(selectedItem);
-                    selectedRowIds.push(selectedItem[this.primaryKeyField])
-                }
-            }
+	handleCellClick(eventObject) {
+		console.log("eventObject",eventObject);
+		
+		//when user clicks on the cell
+		//cancel the default control behavior to (un)select all selections with `cancelBubble = true`
+		//call the main method with object to either add or remove item clicked on
+		eventObject.event.cancelBubble = true;
+		eventObject.removed = [];
+		eventObject.added = [];
+		let selected = this.selectedItems.find(
+			i => i.id === eventObject.cell.cellID.rowID
+		);
+		if (selected) {
+			eventObject.removed.push(eventObject.cell.cellID.rowID);
+		} else {
+			eventObject.added.push(eventObject.cell.cellID.rowID);
+		}
+		this.handleSelection(eventObject);
+	}
+	allSelectedFor(rowContext) {
+		return false;
+	}
+	ngOnChanges(changes: TreeChanges) {
+ 
+		if (changes.selectedItems && !changes.selectedItems.isFirstChange()) {
+			if(this.selectedItems?.length === 0 ){
+				this.comboTreeGrid?.deselectAllRows();	
 
-            if (selectedItem[this.childDataKey] && selectedItem[this.childDataKey].length > 0) {
-                for (let item of selectedItem[this.childDataKey]) {
-                    fnAddAllRowsToBuckets(item);
-                }
-            }
-        }
-        for (let item of this.dataSource) {
-            fnAddAllRowsToBuckets(item);
-        }
-        if (selectedRowIds.length > 0) {
-            this.comboTreeGrid.selectRows(selectedRowIds, false);
-            this.checkAndAddSelectedItems(selectedRows);
-        }
-        else {
-            this.comboTreeGrid.deselectRows(unSelectedRowIds);
-            this.checkAndRemoveUnselectedItems(unSelectedRows);
-        }
-        this.selectedItemsChange.emit(this.selectedItems)
-        if (this.selectedItems && this.selectedItems.length > 0 && this.selectedItems.length === this.totalCount) {
-            this.isAllChecked = true;
-        }
-        else {
-            this.isAllChecked = false;
-        }
-        this.isAnyChecked = this.selectedItems?.length > 0;
-    }
-    onSelectorClick(event: any, context: any) {
-console.log("onsel");
+			}	
+		}
+		if (changes.selectedItems && changes.selectedItems.isFirstChange()) {
+			if(this.selectedItems?.length === 0 ){
+				this.comboTreeGrid?.deselectAllRows();	
 
-        if (event && event.stopPropagation) {
-            event.stopPropagation();
-        }
-        let isSelected: boolean = context.selected;
-        isSelected = this.getRowSelectionStatus(context, isSelected);
+			}
+			if (this.selectedItems?.length > 0) {
+				this.comboTreeGrid?.selectRows(
+					this.selectedItems.map(i => i.id)
+				);
+			}		
+		}
+		if (changes.data && changes.data.currentValue) {
+			this.comboTreeGrid?.deselectAllRows();
+			if (this.data.length > 0) {
+				this.handleSelectOneAcception();
+			}
+		}
+	}
+	ngAfterViewInit(){
+       
+		if (this.selectedItems?.length > 0) {
+			this.comboTreeGrid?.selectRows(
+				this.selectedItems.map(i => i.id)
+			);
+		}
+	}
+	private getAllNodeIds(itemToCheckID: number): number[] {
+		let list = [itemToCheckID];
 
-        let selectedRowId = context.rowID;
-        let selectedItem = this.getSelectedItemFromDataSource(selectedRowId);
-        //find SelectedItem 
+		let children = this.data.filter(
+			dataItem => dataItem.parentId === itemToCheckID
+		);
 
-        if (selectedItem) {
-            this.OnItemSelected(selectedItem, isSelected);
-        }
-        this.selectedItemsChange.emit(this.selectedItems)
-        this.isAnyChecked = this.selectedItems?.length > 0;
+		if (this.dataHasManyLevels) {
+			let grandChildren = children.map(child =>
+				this.getAllNodeIds(child.id)
+			);
+			const flattenedArray = [].concat(grandChildren);
+			if (flattenedArray.length > 0) {
+				list = list.concat(flattenedArray);
+			}
+		} else {
+			list = list.concat(children.map(i => i.id));
+		}
+		return list;
+	}
+	private getItemsFromData(list: number[]): Tree[] {
+		if (list.length === 0) return [];
 
+		let reduced = this.data.reduce((acc, item) => {
+			if (list.includes(item.id)) {
+				acc.push(item);
+			}
+			return acc;
+		}, []);
 
-    }
-    private OnItemSelected(selectedItem: any, isSelected: boolean) {
-        // let subscriberEventParam = [];
-        let selectedItemsFromDatasource: any[] = [];
-        let newSelectedItems = this.getChildren(selectedItem);
+		return reduced;
+	}
 
+	private getParentsToUpdate(itemIds, itemsAction): Tree[] {
+		let itemChangingId = itemIds[0];
+		let item = this.data.find(i => i.id === itemChangingId);
+		let parent = this.data.find(i => i.id === item.parentId);
+		let list = [];
+		if (!parent) {
+			// top level node
+			return null;
+		}
 
+		let returnParent = false;
+		let allSelections = itemIds.concat(this.selectedItems.map(i => i.id)); // selected items may not have all items being selected yet
+		let allRelatedNodes = this.getAllNodeIds(parent.id);
+		if (itemsAction === ADDED_ACTION) {
+			// check if all children are selected
+			returnParent = this.allSiblingsSelected(
+				allRelatedNodes,
+				parent,
+				allSelections
+			);
+		}
+		if (itemsAction === REMOVED_ACTION) {
+			// when unselecting return true to unselect a parent
+			returnParent = true;
+			list = [parent];
+		}
+		if (this.dataHasManyLevels && returnParent) {
+			// if theree is a parent lets check for grandparents
+			list = [parent];
+			let grandParents = this.getParentsToUpdate(
+				[parent.id, itemIds],
+				itemsAction
+			);
+			if (grandParents?.length > 0) {
+				grandParents.map(i => list.push(i));
+			}
+		}
+		if (!this.dataHasManyLevels && returnParent) {
+			list = [parent];
+		}
 
-        if (selectedItem[this.childDataKey]) {
-            selectedItemsFromDatasource = selectedItemsFromDatasource.concat(newSelectedItems);
-        }
-        selectedItemsFromDatasource.push(selectedItem);
+		return returnParent ? list : null;
+	}
+	private allSiblingsSelected(
+		allRelatedNodes: number[],
+		parent: Tree,
+		allSelections: number[]
+	): boolean {
+		const siblings = allRelatedNodes.filter(i => i !== parent.id);
+		const allSelected = siblings.every(node =>
+			allSelections.find(selectedId => selectedId === node)
+		);
+		return allSelected;
+	}
 
+	private canSelectionGetUpdated(event, itemsAction): boolean {
+		if (event[itemsAction].length === 0) {
+			return false;
+		}
+		if (event[itemsAction].length === 1) {
+			let allRelatedNodes = this.getAllNodeIds(event[itemsAction][0]);
 
-        this.UpdateCheckBoxes(isSelected, selectedItemsFromDatasource);
+			if (allRelatedNodes.length > 1) {
+				event[itemsAction] = allRelatedNodes;
+				this.handleSelection(event);
+				return false;
+			}
+		}
+		return true;
+	}
 
-    }
+	private emitSelectedValues() {
+		let selected = this.comboTreeGrid.selectedRows();
+		this.selectedItems = this.getItemsFromData(selected);
+		this.selectedItemsChange.emit(this.selectedItems);
+	}
 
+	getSelectionText(): string {
+		let selectedItems = this.selectedItems || [];
+		let data = this.data;
 
+		if (this.excludeParentsFromTotal) {
+			selectedItems = selectedItems.filter(i => i.parentId !== -1);
+			data = this.data.filter(i => i.parentId !== -1);
+		}
+		let title = '';
+		if (this.selectionText?.length > 0) {
+			title = `${this.selectionText} - `;
+		}
 
+		if (data?.length === 1 && selectedItems?.length === 1) {
+			return `${title}1 selected`;
+		}
 
-    private UpdateCheckBoxes(isSelected: boolean, selectedItemsFromDatasource: any[]) {
-        if (isSelected) {
-            this.selectRows(selectedItemsFromDatasource);
-            if (this.selectedItems && this.selectedItems.length > 0 && this.selectedItems.length === this.totalCount) {
-                this.isAllChecked = true;
-            }
-        }
-        else {
-            this.unselectRows(selectedItemsFromDatasource);
-            this.isAllChecked = false;
-        }
-    }
+		if (data?.length > 0 && data?.length === selectedItems?.length) {
+			return `${title}All selected`;
+		}
 
-    private getItemFromHierarchy(rootItem: any, targetItemId: any): any {
-        if (rootItem && rootItem[this.primaryKeyField] === targetItemId) {
-            return rootItem;
-        }
-        else if (rootItem[this.childDataKey]) {
-            for (let childItemIndex in rootItem[this.childDataKey]) {
-                let foundItem = this.getItemFromHierarchy(rootItem[this.childDataKey][childItemIndex], targetItemId);
-                if (foundItem) {
-                    return foundItem;
-                }
-            }
-        }
-    }
-    private getChildren(selectedItem: any): any[] {
-        let rowIds = [];
-        for (let child in selectedItem[this.childDataKey]) {
-            rowIds.push(selectedItem[this.childDataKey][child])
-            if (selectedItem[this.childDataKey][child][this.childDataKey]) {
-                rowIds = rowIds.concat(this.getChildren(selectedItem[this.childDataKey][child]))
-            }
-        }
-        return rowIds;
-    }
-
-    private getSelectedItemFromDataSource(selectedRowId: any): any {
-        let selectedItem: any;
-        for (let itemIndex in this.dataSource) {
-            selectedItem = this.getItemFromHierarchy(this.dataSource[itemIndex], selectedRowId);
-            if (selectedItem) break;
-        }
-        return selectedItem;
-    }
-
-
-
-    private unselectRows(rows: any[]) {
-        let rowIds = [];
-        for (let rowIndex in rows) {
-            if (this.selectedItems.some(x => x[this.primaryKeyField] === rows[rowIndex][this.primaryKeyField])) {
-                rowIds.push(rows[rowIndex][this.primaryKeyField]);
-                if (rows[rowIndex]["parents"] && rows[rowIndex]["parents"]) {
-                    let parentIds = rows[rowIndex]["parents"].map(x => x[this.primaryKeyField]);
-                    rowIds.push(...parentIds);
-                    rows.push(...rows[rowIndex]["parents"]);
-                }
-            }
-        }
-        this.comboTreeGrid.deselectRows(rowIds);
-        this.checkAndRemoveUnselectedItems(rows);
-    }
-
-    private selectRows(rows: any[]) {
-        let rowIds = [];
-        for (let rowIndex in rows) {
-            if (!this.selectedItems.some(x => x[this.primaryKeyField] === rows[rowIndex][this.primaryKeyField])) {
-                rowIds.push(rows[rowIndex][this.primaryKeyField]);
-            }
-        }
-        this.comboTreeGrid.selectRows(rowIds, false);
-
-        this.checkAndAddSelectedItems(rows);
-    }
-
-    private getRowSelectionStatus(context: any, isSelected: boolean) {
-        if (this.selectedItems.findIndex(x => x[this.primaryKeyField] === context.rowID) === -1) {
-            isSelected = true;
-        }
-        else {
-            isSelected = false;
-        }
-        return isSelected;
-    }
-
-
-
-
-    private checkAndRemoveUnselectedItems(rowIds: any[]) {
-        for (let rowIdIndex in rowIds) {
-            let index = this.selectedItems.findIndex(x => x[this.primaryKeyField] === rowIds[rowIdIndex][this.primaryKeyField]);
-            if (index > -1) {
-                this.selectedItems.splice(index, 1);
-            }
-        }
-    }
-
-    private checkAndAddSelectedItems(rowIds: any[]) {
-        for (let rowIdIndex in rowIds) {
-            let index = this.selectedItems.findIndex(x => x[this.primaryKeyField] === rowIds[rowIdIndex][this.primaryKeyField]);
-            if (index === -1) {
-                this.selectedItems.push(rowIds[rowIdIndex]);
-            }
-        }
-    }
-
-
-
-
-    private _positionSettings = {
-        horizontalStartPoint: HorizontalAlignment.Left,
-        verticalStartPoint: VerticalAlignment.Bottom
-    };
-
-    private overlaySettings = {
-        closeOnOutsideClick: true,
-        modal: false,
-        positionStrategy: new ConnectedPositioningStrategy(this._positionSettings),
-        scrollStrategy: new AbsoluteScrollStrategy()
-    };
-
-    open() {
-        if (!this.igxToggle.collapsed) {
-            return;
-        }
-        this.overlaySettings.positionStrategy.settings.target = this.inputGroup.element.nativeElement;
-        this.igxToggle.open(this.overlaySettings);
-        console.log("open");
-        
-        if (!this.contentWidth) {
-            this.contentWidth = this.inputGroup.element.nativeElement.clientWidth + 'px';
-        }
-        this.comboTreeGrid.width = this.contentWidth;
-
-        requestAnimationFrame(() => {
-            this.comboTreeGrid.rowList.first.cells.first.element.nativeElement.focus();
-        });
-    }
-    toggle() {
-        if (this.igxToggle.collapsed) {
-            this.open();
-            return;
-        }
-        this.igxToggle.close();
-    }
-
-    onToggleClosing() {
-        this.comboTreeGrid.navigateTo(0, 0);
-
-    }
-    getSelectionText() {
-        if (this.isAllChecked) {
-            return `${this.searchPlaceholderText} - All selected`;
-        }
-        if (this.selectedItems?.length > 0) {
-            let selectedNonGroups = this.selectedItems.filter(s=>!s[this.childDataKey]);
-            return `${this.searchPlaceholderText} - ${selectedNonGroups.length.toString()} selected`;
-        }
-        return this.searchPlaceholderText;
-    }
-
-    onExpandCollapseClick() {
-        this.isAnyExpanded ? this.comboTreeGrid.collapseAll() : this.comboTreeGrid.expandAll();
-        this.isAnyExpanded = !this.isAnyExpanded;
-    }
-
-    rowToggle(event: IRowToggleEventArgs) {
-        let isAnyExpanded = false;
-        if (event.expanded) {
-            this.isAnyExpanded = true;
-            return;
-        }
-        this.comboTreeGrid.records.forEach((value, key) => {
-            if (key == event.rowID) return;
-            if (value.expanded) {
-                isAnyExpanded = true;
-                return;
-            }
-        })
-        this.isAnyExpanded = isAnyExpanded;
-    }
-    isGroup(name: string): boolean {
-        return this.dataSource.find(d => d.name == name);
-    }
-
-    isSomeInGroupChecked(rowContext): boolean{
-        if(this.isGroup(rowContext.rowID)){
-            console.log( this.selectedItems); 
-            return true;
-        }
-       return false;
-    }
+		if (selectedItems?.length > 0) {
+			return `${title}${selectedItems.length.toString()} selected`;
+		}
+		return this.searchPlaceholderText;
+	}
 }

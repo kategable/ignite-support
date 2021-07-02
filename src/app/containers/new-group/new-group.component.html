@@ -11,7 +11,7 @@
             </div>
             <div class="col-4">
                 <span>Country</span>            
-                <app-tree-select [dataSource]="zones$ | async" [childDataKey]="'countries'"
+                <app-tree-select [data]="zones$ | async" [childDataKey]="'countries'"
                     [selectedItems]="selectedCountries$ | async" [searchPlaceholderText]="'Countries'"
                     [primaryKeyField]="'name'"
                     (selectedItemsChange)="handleSelectedCountry($event);"></app-tree-select>

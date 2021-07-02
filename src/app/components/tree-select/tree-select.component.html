@@ -1,42 +1,37 @@
-﻿
-<div class="tree-select">
-    <igx-input-group  type="border" [displayDensity]="'compact'" >
-        <input  id="tree-input" igxInput readonly [disabled]="disabled || dataSource?.length == 0"
-            [ngClass]="{'search-container': selectedItems?.length > 0,'search-container-default': selectedItems?.length === 0 }"  
-            [ngModel]="getSelectionText()"  
-            [placeholder]="searchPlaceholderText" 
-            (keydown.arrowdown)="toggle()"  (click)="open()">
+﻿<div class="tree-grid">
+	<igx-input-group type="border" [displayDensity]="'compact'">
+		<input igxInput readonly [disabled]="disabled || data?.length == 0"
+			[ngClass]="{'search-container': selectedItems?.length > 0 && !highlightAcception,'search-container-default': selectedItems?.length === 0 }"
+			[ngModel]="getSelectionText()" [placeholder]="searchPlaceholderText" (keydown.arrowdown)="toggle()"
+			(click)="open()" />
 
-        <igx-suffix igxButton="icon" class="dropdownToggleButton"  (click)="toggle()">
-            <igx-icon class="dropdown-icon" >arrow_drop{{ toggleRef.collapsed ? '_down' : '_up' }}</igx-icon>
-        </igx-suffix>
-    </igx-input-group>
-    <div class="toggle-content" igxToggle #toggleRef="toggle" [style.width]="contentWidth" (onClosing)='onToggleClosing()'>
-        <igx-tree-grid #tree  (onRowSelectionChange)="onRowClickChange($event)" (onCellClick)="onRowClickChange($event)" [data]="dataSource" [childDataKey]="childDataKey"  [rowHeight]="36"
-                       [autoGenerate]="false" height="100%"  [primaryKey]="primaryKeyField" [rowSelection]="'multiple'" (onRowToggle)="rowToggle($event)" >
-            <ng-template igxHeadSelector let-headContext>      
-                <igx-checkbox [disableRipple] = "true" (change)="OnHeaderClick($event)" #allCheck 
-                [checked]="headContext.selectedCount > 0 && headContext.selectedCount === headContext.totalCount"
-                [indeterminate]="headContext.selectedCount > 0 && headContext.selectedCount !== headContext.totalCount"></igx-checkbox>                 
-            </ng-template>
+		<igx-suffix [disabled]="disabled || data?.length == 0" igxButton="icon" class="dropdownToggleButton"
+			(click)="toggle()">
+			<igx-icon [ngClass]="{'disable-arrow':disabled}" class="dropdown-icon">
+				arrow_drop{{ toggleRef.collapsed ? '_down' : '_up' }}</igx-icon>
+		</igx-suffix>
+	</igx-input-group>
 
-            <ng-template igxRowSelector let-rowContext>
-           
-                <igx-checkbox [checked]="rowContext.selected"                
-                [readonly]="true" (click)="onSelectorClick($event, rowContext)"></igx-checkbox>
-            </ng-template>
+	<div class="toggle-content" igxToggle #toggleRef="toggle" [style.width]="contentWidth"
+		(onClosing)="handleToggleClosing()">
+		<igx-tree-grid class="grid-tree" igxPreventDocumentScroll #treeGrid [data]="data" primaryKey="id"
+			foreignKey="parentId" rowSelection="multiple" cellSelection="none" height="100%" [rowHeight]="36"
+			(onRowSelectionChange)="handleSelection($event)" (onCellClick)="handleCellClick($event)">
+			<ng-template igxRowSelector let-rowContext>
+				<igx-checkbox [disabled]="true" [disableRipple]="true" [readonly]="true"
+					[checked]="rowContext.selected"></igx-checkbox>
+			</ng-template>
+			<igx-column Name="Name" field="name">
+				<ng-template igxCell let-cell="cell">
+					<div class="cell__inner" [ngClass]="{'less-margin':isFlat}">
+						<span class="h16-grid name nowrap-column">{{ cell.value }}</span>
+					</div>
+				</ng-template>
 
-            <igx-column Name="Name" field="name" >     
-                <ng-template igxCell let-cell="cell">
-                    <div class="cell__inner">            
-                        <span  [ngClass]="{'group-name': isGroup(cell.value)}" class="name">{{ cell.value }}</span>
-                    </div>
-                </ng-template>    
-                <ng-template igxHeader let-column >
-                    <span class="header-cell" (click)="OnHeaderClick($event)">All</span>   
-                    
-                </ng-template>
-            </igx-column>
-        </igx-tree-grid>
-    </div>
+				<ng-template igxHeader let-headContext>
+					<span class="header-cell" (click)="handleSelectAllClick($event)">Select All</span>
+				</ng-template>
+			</igx-column>
+		</igx-tree-grid>
+	</div>
 </div>
